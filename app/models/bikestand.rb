@@ -11,4 +11,5 @@
 #
 
 class Bikestand < ApplicationRecord
+  has_many :bikes
 end

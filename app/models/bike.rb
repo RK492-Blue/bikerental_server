@@ -10,4 +10,5 @@
 #
 
 class Bike < ApplicationRecord
+  belongs_to :bikestand, :optional => true
 end

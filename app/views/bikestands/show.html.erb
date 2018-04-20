@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @bikestand.location %>
+</p>
+
+<p>
+  <strong>Bikestand long:</strong>
+  <%= @bikestand.bikestand_long %>
+</p>
+
+<p>
+  <strong>Bikestand lat:</strong>
+  <%= @bikestand.bikestand_lat %>
+</p>
+
+<%= link_to 'Edit', edit_bikestand_path(@bikestand) %> |
+<%= link_to 'Back', bikestands_path %>

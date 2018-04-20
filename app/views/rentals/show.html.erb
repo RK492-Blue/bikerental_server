@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @rental.bike_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rental.user_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @rental.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @rental.end_time %>
+</p>
+
+<p>
+  <strong>Start station:</strong>
+  <%= @rental.start_station %>
+</p>
+
+<p>
+  <strong>End station:</strong>
+  <%= @rental.end_station %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @rental.cost %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

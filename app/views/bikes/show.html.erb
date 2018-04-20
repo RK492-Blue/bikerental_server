@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bike serial num:</strong>
+  <%= @bike.bike_serial_num %>
+</p>
+
+<p>
+  <strong>Bikestand:</strong>
+  <%= @bike.bikestand_id %>
+</p>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>

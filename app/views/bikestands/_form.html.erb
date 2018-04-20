@@ -1,0 +1,32 @@
+<%= form_with(model: bikestand, local: true) do |form| %>
+  <% if bikestand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bikestand.errors.count, "error") %> prohibited this bikestand from being saved:</h2>
+
+      <ul>
+      <% bikestand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_area :location, id: :bikestand_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bikestand_long %>
+    <%= form.text_area :bikestand_long, id: :bikestand_bikestand_long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bikestand_lat %>
+    <%= form.text_area :bikestand_lat, id: :bikestand_bikestand_lat %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

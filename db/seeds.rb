@@ -34,21 +34,25 @@ b8 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 8)
 b9 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 9)
 b10 = Bike.create(:bike_serial_num => 'A3', :bikestand_id => 10)
 
-BikeStand.destroy_all
-s1 = BikeStand.create(:location => '1 Market Street', :bikestand_long => 151.204644, :bikestand_lat => -33.871322)
-s2 = BikeStand.create(:location => 'George Street', :bikestand_long => 151.206944, :bikestand_lat => -33.870206)
-s3 = BikeStand.create(:location => 'York Street', :bikestand_long => 151.205735, :bikestand_lat => -33.866269)
-s4 = BikeStand.create(:location => 'Oxford Street', :bikestand_long => 151.212091, :bikestand_lat => -33.876948)
-s5 = BikeStand.create(:location => 'Bourke Street', :bikestand_long => 151.215337, :bikestand_lat => -33.887130)
-s6 = BikeStand.create(:location => 'Steel Street', :bikestand_long => 151.211315, :bikestand_lat => -33.887415)
-s7 = BikeStand.create(:location => 'St James Street', :bikestand_long => 151.155303, :bikestand_lat => -33.876621)
-s8 = BikeStand.create(:location => 'William Street', :bikestand_long => 151.220333, :bikestand_lat => -33.875070)
-s9 = BikeStand.create(:location => 'Hunt Street', :bikestand_long => 151.218912, :bikestand_lat => -33.879783)
+Bikestand.destroy_all
+s1 = Bikestand.create(:location => '1 Market Street', :bikestand_long => 151.204644, :bikestand_lat => -33.871322)
+s2 = Bikestand.create(:location => 'George Street', :bikestand_long => 151.206944, :bikestand_lat => -33.870206)
+s3 = Bikestand.create(:location => 'York Street', :bikestand_long => 151.205735, :bikestand_lat => -33.866269)
+s4 = Bikestand.create(:location => 'Oxford Street', :bikestand_long => 151.212091, :bikestand_lat => -33.876948)
+s5 = Bikestand.create(:location => 'Bourke Street', :bikestand_long => 151.215337, :bikestand_lat => -33.887130)
+s6 = Bikestand.create(:location => 'Steel Street', :bikestand_long => 151.211315, :bikestand_lat => -33.887415)
+s7 = Bikestand.create(:location => 'St James Street', :bikestand_long => 151.155303, :bikestand_lat => -33.876621)
+s8 = Bikestand.create(:location => 'William Street', :bikestand_long => 151.220333, :bikestand_lat => -33.875070)
+s9 = Bikestand.create(:location => 'Hunt Street', :bikestand_long => 151.218912, :bikestand_lat => -33.879783)
 
-b1.BikeStand << s1
-b2.BikeStand << s2
-b3.BikeStand << s1
-b4.BikeStand << s5
-b5.BikeStand << s3
-b7.BikeStand << s2
-b9.BikeStand << s8
+# User.destroy_all
+# u1 = User.create :email => 'harpo@co.au', :password => 'chicken'
+# u2 = User.create :email => 'katty@co.in', :password => 'chicken'
+
+# s1.Bikestand << b1
+# b2.Bikestand << s2
+# b3.Bikestand << s1
+# b4.Bikestand << s5
+# b5.Bikestand << s3
+# b7.Bikestand << s2
+# b9.Bikestand << s8

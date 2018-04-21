@@ -16,14 +16,19 @@
       <tr>
         <td><%= bike.bike_serial_num %></td>
         <td><%= bike.bikestand_id %></td>
+        <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if @current_user.present? && @current_user.user_type == 'admin' %>
 <%= link_to 'New Bike', new_bike_path %>
+
+<% end %>

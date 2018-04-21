@@ -4,7 +4,12 @@ class RentalsController < ApplicationController
   # GET /rentals
   # GET /rentals.json
   def index
+
     @rentals = Rental.all
+    if @current_user.present?
+      @rentals_user = Rental.where(:user_id => @current_user.id)
+    end
+
   end
 
   # GET /rentals/1

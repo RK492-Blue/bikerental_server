@@ -1,3 +1,8 @@
+<%if @current_user.nil?%>
+<p></p><p></p>
+<h4>Please Sign in.</h4>
+
+<% elsif @current_user.present?%>
 <p id="notice"><%= notice %></p>
 
 <h1>Rentals</h1>
@@ -37,3 +42,4 @@
 <br>
 
 <%= link_to 'New Rental', new_rental_path %>
+<% end %>

@@ -33,9 +33,21 @@
 #                PATCH  /bikes/:id(.:format)           bikes#update
 #                PUT    /bikes/:id(.:format)           bikes#update
 #                DELETE /bikes/:id(.:format)           bikes#destroy
-# 
+#
 
 Rails.application.routes.draw do
+  get 'session/new'
+
+  get 'pages/home'
+
+  root :to =>'pages#home'
+
+  resources :users, :only =>[:new, :create]
+
+  get '/login' => 'session#new'
+  post '/login' =>'session#create'
+  delete '/login' => 'session#destroy'
+
   resources :rentals
   resources :users
   resources :bikestands

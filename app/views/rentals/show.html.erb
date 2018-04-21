@@ -32,7 +32,7 @@
 
 <p>
   <strong>Cost:</strong>
-  <%= @rental.cost %>
+  <%= number_to_currency(@rental.cost) %>
 </p>
 
 <%= link_to 'Edit', edit_rental_path(@rental) %> |

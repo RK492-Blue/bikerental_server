@@ -27,6 +27,7 @@ class RentalsController < ApplicationController
 
     @rental = Rental.new(rental_params)
 
+    # redirect_to @rental
     respond_to do |format|
       if @rental.save
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }

@@ -14,7 +14,7 @@ class RentalsController < ApplicationController
 
   # GET /rentals/new
   def new
-    @rental = Rental.new 
+    @rental = Rental.new
   end
 
   # GET /rentals/1/edit
@@ -24,8 +24,9 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
-    @rental = Rental.new(rental_params)
+    @rental = Rental.new(new_rental_params)
 
+    # redirect_to @rental
     respond_to do |format|
       if @rental.save
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
@@ -41,7 +42,7 @@ class RentalsController < ApplicationController
   # PATCH/PUT /rentals/1.json
   def update
     respond_to do |format|
-      if @rental.update(rental_params)
+      if @rental.update(return_rental_params)
         format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else
@@ -68,7 +69,10 @@ class RentalsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def rental_params
+    def new_rental_params
+      params.require(:rental).permit(:bike_id, :user_id, :start_time, :start_stand_id)
+    end
+    def return_rental_params
       params.require(:rental).permit(:bike_id, :user_id, :start_time, :end_time, :start_stand_id, :end_stand_id, :cost)
     end
 end

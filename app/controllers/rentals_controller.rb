@@ -43,7 +43,7 @@ class RentalsController < ApplicationController
   # PATCH/PUT /rentals/1.json
   def update
     respond_to do |format|
-      if @rental.update(return_rental_params)
+      if @rental.update(rental_params)
         format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else

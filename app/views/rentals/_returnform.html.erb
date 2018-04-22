@@ -13,13 +13,13 @@
 
   <div class="field">
     <%= form.label :bike_id %>
-    <%= form.number_field :bike_id, id: :rental_bike_id %>
+    <%= form.number_field :bike_id, id: :rental_bike_id %> <%# has to show the logged in's bike. Current.user.bike?  %>
   </div>
 
 
   <div class="field">
     <%= form.label :end_time %>
-    <%= form.datetime_select :end_time, id: :rental_end_time %>
+    <%= form.datetime_select :end_time, id: :rental_end_time %> <%# add a Time.now option %>
   </div>
 
 

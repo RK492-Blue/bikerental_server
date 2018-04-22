@@ -23,14 +23,14 @@
         <td><%= rental.user_id %></td>
         <td><%= rental.start_time %></td>
         <td><%= rental.end_time %></td>
-        <td><%= rental.start_stand.location %></td>
+        <td><%= rental.start_stand %></td> <%# start and end_stand.location isn't working here TODO: fix.  %>
 
         <% if rental.end_stand.present? %>
-          <td><%= rental.end_stand.location %></td>
+          <td><%= rental.end_stand %></td>
         <% end %>
 
         <% if rental.cost.present? %>
-          <td><%= rental.cost %></td>
+          <td><%= number_to_currency(rental.cost) %></td>
         <% end %>
 
         <td><%= link_to 'Show', rental %></td>

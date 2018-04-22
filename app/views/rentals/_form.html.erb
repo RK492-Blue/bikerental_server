@@ -12,20 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :bike_id %>
-    <%= form.number_field :bike_id, id: :rent %>
-    <%# :bikestand.bik %>
-  </div>
-
-  <div class="field">
     <%= form.label :start_time %>
     <%= form.datetime_select :start_time, id: :rental_start_time %>
-  </div>
+  </div> <%# add a Time.now option %>
 
 
   <div class="field">
     <%= form.label :start_stand %>
     <%= form.select :start_stand_id, Bikestand.pluck(:location, :id), :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bike_id %>
+    <%= form.number_field :bike_id, id: :rent %>
+
+    <%# trying to make list of bikes in bikestand show %>
+    <%# form.select :bike_id, Bikestand.bikes, :include_blank => true %>
+     <%# @bikestand.bikes.each do |bike| %>
+     <!-- <li><%# bike.id %></i> -->
+     <%# end %>
 
   </div>
 

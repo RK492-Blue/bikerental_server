@@ -12,6 +12,10 @@
 #
 
 class User < ApplicationRecord
+  has_secure_password
   has_many :rentals
   has_many :bikes, through: :rentals
+
+  validates :email, :presence =>true, :uniqueness =>true
+
 end

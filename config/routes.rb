@@ -36,7 +36,23 @@
 #
 
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  get 'session/new'
+
+  get 'pages/home'
+  #         rental GET    /rentals/:id(.:format)         rentals#show
+
+  root :to =>'pages#home'
+
+  resources :users, :only =>[:new, :create]
+
+  get '/login' => 'session#new'
+  post '/login' =>'session#create'
+  delete '/login' => 'session#destroy'
+
+=======
   root :to => 'pages#index' 
+>>>>>>> 2ce669fb50f4b19c49c47817643ea8fa644bf2e6
   resources :rentals
   resources :users
   resources :bikestands

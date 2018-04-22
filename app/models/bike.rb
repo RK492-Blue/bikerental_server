@@ -11,4 +11,8 @@
 
 class Bike < ApplicationRecord
   belongs_to :bikestand, :optional => true
+  # *******************************
+  has_many :rentals
+  # *******************************
+
 end

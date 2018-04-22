@@ -22,13 +22,15 @@
 
 <p>
   <strong>Start station:</strong>
-  <%= @rental.start_station %>
+  <%= @rental.start_stand.location %>
 </p>
 
-<p>
-  <strong>End station:</strong>
-  <%= @rental.end_station %>
-</p>
+<% if @rental.end_stand.present? %>
+  <p>
+    <strong>End station:</strong>
+    <%= @rental.end_stand.location %>
+  </p>
+<% end %>
 
 <p>
   <strong>Cost:</strong>

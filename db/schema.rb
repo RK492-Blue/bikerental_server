@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180420043454) do
   create_table "bikes", force: :cascade do |t|
     t.string "bike_serial_num"
     t.integer "bikestand_id"
+    t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,8 +36,8 @@ ActiveRecord::Schema.define(version: 20180420043454) do
     t.integer "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.text "start_stand_id"
-    t.text "end_stand_id"
+    t.integer "start_stand_id"
+    t.integer "end_stand_id"
     t.float "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'session/new'
 
   get 'pages/home'
+  #         rental GET    /rentals/:id(.:format)         rentals#show
 
   root :to =>'pages#home'
 

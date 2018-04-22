@@ -1,4 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%if @current_user.present? && !@rental.end_stand_id.present? %>
+<p>You have taken <%= @rental.bike.bike_serial_num %>.</p><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time %></p>
+
+<%= link_to 'Return Bike', edit_rental_path(@rental) %> |
+
+<%= link_to 'Back', rentals_path %>
+
+<%else %>
+<p>Thankyou for choosing BikeShare App</p>
+<p>Receipt Details</p>
+<p>Bike: <%= @rental.bike.bike_serial_num %>.</p>
+<p>Travel Details:</p>
+<p><%= @rental.start_stand.location %> to <%= @rental.end_stand.location %></p>
+<p> Start time:<%= @rental.start_time %></p>
+<p> End time:<%= @rental.end_time %></p>
+
+<p>Cost:<%= @rental.cost %></p>
+<p>Duration:</p>
+
+<%= link_to 'Back', rentals_path %>
+
+
+<% end %>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Bike:</strong>
@@ -21,19 +44,27 @@
 </p>
 
 <p>
-  <strong>Start station:</strong>
-  <%= @rental.start_station %>
-</p>
+  <strong>Start stand:</strong>-->
+<!--################################  -->
+  <!-- <%= @rental.start_stand.location%> -->
+<!-- ############################### -->
+<!-- </p>
 
 <p>
-  <strong>End station:</strong>
-  <%= @rental.end_station %>
-</p>
+ <strong>End stand:</strong> -->
+  <!--################################  -->
+  <!-- <%= @rental.end_stand_id %> -->
+  <!--################################  -->
+
+<!-- </p>
 
 <p>
   <strong>Cost:</strong>
   <%= @rental.cost %>
-</p>
 
-<%= link_to 'Edit', edit_rental_path(@rental) %> |
-<%= link_to 'Back', rentals_path %>
+</p> -->
+
+<!-- <%= link_to 'Edit', edit_rental_path(@rental) %> | -->
+<!-- <%= link_to 'Return Bike', edit_rental_path(@rental) %> |
+
+<%= link_to 'Back', rentals_path %> -->

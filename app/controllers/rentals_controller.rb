@@ -6,9 +6,7 @@ class RentalsController < ApplicationController
   def index
 
     @rentals = Rental.all
-    if @current_user.present?
-      @rentals_user = Rental.where(:user_id => @current_user.id)
-    end
+
 
   end
 
@@ -33,6 +31,8 @@ class RentalsController < ApplicationController
 
     respond_to do |format|
       if @rental.save
+        Bike.where(:id => @rental.bike_id).update(available: 'f')
+
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
         format.json { render :show, status: :created, location: @rental }
       else
@@ -47,6 +47,12 @@ class RentalsController < ApplicationController
   def update
     respond_to do |format|
       if @rental.update(rental_params)
+        Bike.where(:id => @rental.bike_id).update(available: 't',:bikestand_id =>@rental.end_stand_id)
+        # Bike.where(:id => @rental.bike_id).update(:bikestand_id =>@rental.end_stand_id)
+
+        # Bike.where(:id => @rental.bike_id).update(available: 't',bikestand_id: =>@rental.end_stand_id)
+
+        # User.where(:id => @current_user.id).update(name: 'Maria')
         format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else
@@ -74,6 +80,6 @@ class RentalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rental_params
-      params.require(:rental).permit(:bike_id, :user_id, :start_time, :end_time, :start_station, :end_station, :cost)
+      params.require(:rental).permit(:bike_id, :user_id, :start_time, :end_time, :start_stand_id, :end_stand_id, :cost)
     end
 end

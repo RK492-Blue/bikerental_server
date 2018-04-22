@@ -1,0 +1,64 @@
+<% if @current_user.nil? %>
+    <h2>Please Sign-in to hire a bike!</h2>
+    <% elsif @current_user.present? %>
+        <%= form_with(model: rental, local: true) do |formreturn| %>
+        <% if rental.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+            <ul>
+            <% rental.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <!-- <div class="field">
+          helloooo!!!
+          <%= formreturn.label :bike_id %>-->
+          <!-- <%= formreturn.number_field :bike_id, id: :rental_bike_id %> -->
+          <!-- <%= formreturn.select :bike_id, Bike.where(:available => 't').pluck(:bike_serial_num, :id)%> -->
+
+
+        <!-- </div> -->
+
+        <!-- <div class="field">
+          <%= formreturn.label :user_id %> -->
+          <!-- <%= formreturn.number_field :user_id, id: :rental_user_id %> -->
+          <!-- <%= formreturn.hidden_field(:user_id, {:value=>@current_user.id}) %> -->
+
+        <!-- </div> -->
+
+        <!-- <div class="field">
+          <%= formreturn.label :start_time %>
+          <%= formreturn.datetime_select :start_time, id: :rental_start_time %>
+        </div> -->
+
+        <div class="field">
+          <%= formreturn.label :end_time%>
+          <%= formreturn.datetime_select :end_time, id: :rental_end_time %>
+        </div>
+
+        <!-- <div class="field">
+          <%= formreturn.label :start_stand_id %>-->
+        <!-- <%= formreturn.number_field :start_stand_id, id: :rental_start_stand_id %> -->
+           <!-- <%= formreturn.select :start_stand_id, Bikestand.pluck(:location,:id)%>
+        </div> -->
+
+        <div class="field">
+          <%= formreturn.label :end_stand_id %>
+          <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id)%>
+        </div>
+
+        <div class="field">
+          <%= formreturn.label :cost %>
+          <%= formreturn.text_field :cost, id: :rental_cost %>
+        </div>
+
+
+        <div class="actions">
+          <%= formreturn.submit "Print Receipt"%>
+        </div>
+        <% end %>
+<% end %>

@@ -12,5 +12,5 @@
 
 class Bikestand < ApplicationRecord
   has_many :bikes
-  has_many :rentals 
+  has_many :rentals
 end

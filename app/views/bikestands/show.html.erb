@@ -15,5 +15,15 @@
   <%= @bikestand.bikestand_lat %>
 </p>
 
+<p>
+  <strong>Bikes:</strong>
+  <ul>
+    <% @bikestand.bikes.each do |bike| %>
+      <li><%= bike.id %></i>
+    <% end %>
+  </ul>
+</p>
+
+
 <%= link_to 'Edit', edit_bikestand_path(@bikestand) %> |
 <%= link_to 'Back', bikestands_path %>

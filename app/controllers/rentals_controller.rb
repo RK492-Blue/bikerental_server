@@ -24,7 +24,8 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
-    @rental = Rental.new(new_rental_params)
+
+    @rental = Rental.new(rental_params)
 
     # redirect_to @rental
     respond_to do |format|
@@ -69,10 +70,7 @@ class RentalsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def new_rental_params
-      params.require(:rental).permit(:bike_id, :user_id, :start_time, :start_stand_id)
-    end
-    def return_rental_params
+    def rental_params
       params.require(:rental).permit(:bike_id, :user_id, :start_time, :end_time, :start_stand_id, :end_stand_id, :cost)
     end
 end

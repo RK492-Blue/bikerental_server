@@ -29,8 +29,10 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
+
     @rental = Rental.new(rental_params)
 
+    # redirect_to @rental
     respond_to do |format|
       if @rental.save
         Bike.where(:id => @rental.bike_id).update(available: 'f')

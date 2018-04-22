@@ -15,11 +15,15 @@
         <% end %>
 
         <div class="field">
+          <%= form.label :start_stand_id %>
+          <!-- <%= form.number_field :start_stand_id, id: :rental_start_stand_id %> -->
+          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id)%>
+        </div
+
+        <div class="field">
           <%= form.label :bike_id %>
           <!-- <%= form.number_field :bike_id, id: :rental_bike_id %> -->
           <%= form.select :bike_id, Bike.where(:available => 't').pluck(:bike_serial_num, :id)%>
-
-
         </div>
 
         <!-- <div class="field">
@@ -34,16 +38,8 @@
           <%= form.datetime_select :start_time, id: :rental_start_time %>
         </div>
 
-        <!-- <div class="field">
-          <%= form.label :end_time %>
-          <%= form.time_select :end_time, id: :rental_end_time %>
-        </div> -->
 
-        <div class="field">
-          <%= form.label :start_stand_id %>
-          <!-- <%= form.number_field :start_stand_id, id: :rental_start_stand_id %> -->
-          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id)%>
-        </div>
+
 
         <!-- <div class="field">
           <%= form.label :end_stand_id %>

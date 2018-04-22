@@ -14,11 +14,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+   @users = User.all
+  end
+
+
 
 
   private
     def user_params
-      params.require(:user).permit(:name, :phone, :email, :password, :password_confirmation,:user_type)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation,:user_type)
     end
 
   # before_action :set_user, only: [:show, :edit, :update, :destroy]

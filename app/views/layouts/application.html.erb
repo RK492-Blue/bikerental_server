@@ -16,8 +16,9 @@
           <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
           <%= link_to 'Home',root_path %>
           <%= link_to 'Bikes',bikes_path %>
-          <%= link_to 'BikeStand', bikestands_path %>
+          <%= link_to 'Bike Stands', bikestands_path %>
           <%= link_to 'Rentals',rentals_path%>
+          <h3>Welcome, <%= @current_user.name%>!</h3>
           <% else %>
           <%= link_to 'Home',root_path %>
           <%= link_to 'Sign Up', new_user_path %>

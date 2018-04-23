@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Bikestand</h2>
+
 <p>
   <strong>Location:</strong>
   <%= @bikestand.location %>
@@ -19,7 +21,7 @@
   <strong>Bikes:</strong>
   <ul>
     <% @bikestand.bikes.each do |bike| %>
-      <li><%= bike.bike_serial_num %></i>
+      <li> <%= bike.bike_serial_num %></i>
     <% end %>
   </ul>
 </p>

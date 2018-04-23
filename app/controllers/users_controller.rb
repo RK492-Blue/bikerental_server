@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 
+  def index
+   @users = User.all
+   if @current_user.present?
+       @rental_user = User.where(:id => @current_user.id)
+   end
+
+  end
+
   def new
     @user = User.new
   end
@@ -7,29 +15,30 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      # redirect_to root_path
       redirect_to login_path
     else
       render :new
     end
   end
 
-  def show
+
+
+  def edit
     @user = User.find params[:id]
   end
 
-  def index
-   @users = User.all
-
-   if @current_user.present?
-       @rental_user = User.where(:id => @current_user.id)
-   end
-
-
-
+  def update
+    @user = User.find params[:id]
+    if @user.update user_params # user.save, all in one step. update and saves.
+    redirect_to @user
+    else
+      render :edit #using this data in the update action, render edit page.
+    end
   end
 
-
+  def show
+    @user = User.find params[:id]
+  end
 
 
   private

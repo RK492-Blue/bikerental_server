@@ -5,6 +5,9 @@ class RentalsController < ApplicationController
   # GET /rentals.json
   def index
     @rentals = Rental.all
+    if @current_user.present?
+      @rental_user1 = Rental.where(:user_id => @current_user.id)
+    end
   end
 
   def rental_user

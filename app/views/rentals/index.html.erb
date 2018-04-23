@@ -51,12 +51,9 @@
         <!--*******************************************-->
         <td><%= number_to_currency(rental.cost) %></td>
         <td><%= link_to 'View Details', rental %></td>
-<<<<<<< HEAD
         <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>
 
-=======
         <td><%= link_to 'Edit Rental', edit_rental_path(rental) %></td>
->>>>>>> c887a7e0977fe71b51086ae5beaf602477283c92
         <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
@@ -77,7 +74,7 @@
 
     <tbody>
 
-      <% @rental_user.each do |rental| %>
+      <% @rental_user1.each do |rental| %>
         <tr>
           <td><%= rental.bike.bike_serial_num%></td>
 

@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-<%= form_with(model: rental, local: true) do |form| %>
+
+<!-- <%= form_with(model: rental, local: true) do |form| %>
   <% if rental.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
@@ -29,8 +29,8 @@
   <div class="field">
     <%= form.label :bike_id %>
     <%= form.number_field :bike_id, id: :rent %>
-  </div>
-=======
+  </div> -->
+
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -78,7 +78,7 @@
         </div>
         <% end %>
 <% end %>
->>>>>>> a700a0262119f2a4fc4a48287b834665116f4a7b
+
 
 
   <div class="actions">

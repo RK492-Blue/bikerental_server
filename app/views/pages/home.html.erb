@@ -9,6 +9,6 @@
   <p>Just Ride! Nothing holds you back</p>
   <p>When you're on the road, it's always safety first </p>
   <div><%= link_to 'Hire Bike', new_rental_path %></div>
-  <div><%= link_to 'Profile', user_path %></div>
+  <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>
   <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
 <% end %>

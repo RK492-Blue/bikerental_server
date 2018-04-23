@@ -53,6 +53,9 @@ Rails.application.routes.draw do
 
   root :to => 'pages#index'
 
+  root :to => 'pages#index'
+
+
   resources :rentals
   resources :users
   resources :bikestands

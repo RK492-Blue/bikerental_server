@@ -36,7 +36,7 @@
 #
 
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   get 'session/new'
 
   get 'pages/home'
@@ -50,9 +50,9 @@ Rails.application.routes.draw do
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
 
-=======
-  root :to => 'pages#index' 
->>>>>>> 2ce669fb50f4b19c49c47817643ea8fa644bf2e6
+
+  root :to => 'pages#index'
+
   resources :rentals
   resources :users
   resources :bikestands

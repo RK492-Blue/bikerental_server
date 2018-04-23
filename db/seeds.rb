@@ -39,10 +39,13 @@ s7 = Bikestand.create(:location => 'St James Street', :bikestand_long => 151.155
 s8 = Bikestand.create(:location => 'William Street', :bikestand_long => 151.220333, :bikestand_lat => -33.875070)
 s9 = Bikestand.create(:location => 'Hunt Street', :bikestand_long => 151.218912, :bikestand_lat => -33.879783)
 
-# User.destroy_all
-# u1 = User.create :email => 'harpo@co.au', :password => 'chicken'
-# u2 = User.create :email => 'katty@co.in', :password => 'chicken'
-
+User.destroy_all
+u1 = User.create :email => 'harpo@co.au', :password => 'chicken'
+u2 = User.create :email => 'katty@co.in', :password => 'chicken'
+u3 = User.create :email => 'bill@co.au', :password => 'chicken'
+u4 = User.create :email => 'jerry@co.au', :password => 'chicken'
+u5 = User.create :email => 'chico@co.co', :password => 'chicken'
+u6 = User.create :email => 'ricky@co.au', :password => 'chicken'
 
 s1.bikes << b1 << b3
 s2.bikes << b5 << b7

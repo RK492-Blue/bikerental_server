@@ -1,7 +1,34 @@
 <p id="notice"><%= notice %></p>
 <% if @current_user.present? && @current_user.user_type == 'admin' %>
-<h1>Users</h1>
+      <h1>Users</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>User type</th>
+            <th>Email</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.user_type %></td>
+              <td><%= user.email %></td>
+              <td><%= user.password %></td>
+              <!-- <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Edit', edit_user_path(user) %></td>
+              <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+<!-- <%elsif @currrent_user.present? && @current_user.user_type === 'user'%>
+<h1>Users</h1>
 <table>
   <thead>
     <tr>
@@ -14,20 +41,24 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+
+
+    <% @user.rentals.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-        <td><%= user.name %></td>
+        <td><%= user.rentals.bike_id %></td>
         <td><%= user.user_type %></td>
         <td><%= user.email %></td>
         <td><%= user.password %></td>
-        <!-- <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+
+
 
 <br>
 

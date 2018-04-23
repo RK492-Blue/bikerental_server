@@ -20,6 +20,13 @@ class UsersController < ApplicationController
 
   def index
    @users = User.all
+
+   if @current_user.present?
+       @rental_user = User.where(:id => @current_user.id)
+   end
+
+
+
   end
 
 

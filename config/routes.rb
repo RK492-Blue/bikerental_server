@@ -59,6 +59,8 @@ Rails.application.routes.draw do
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
 
+  get '/rental_user' =>'rentals#rental_user'
+
   resources :rentals
   resources :users
   resources :bikestands

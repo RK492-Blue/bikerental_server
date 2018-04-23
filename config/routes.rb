@@ -50,12 +50,12 @@ Rails.application.routes.draw do
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
 
-<<<<<<< HEAD
-  root :to => 'pages#index' 
+
+  root :to => 'pages#index'
 =======
 
   root :to => 'pages#index'
->>>>>>> 9a4a70e2010e0d043d22691f96aadd6bd1ab6c69
+
 
   resources :rentals
   resources :users

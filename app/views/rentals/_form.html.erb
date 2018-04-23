@@ -56,7 +56,7 @@
         <div class="field">
           <%= form.label :bike_id %>
           <!-- <%= form.number_field :bike_id, id: :rental_bike_id %> -->
-          <%= form.select :bike_id, Bike.where(:available => 't').pluck(:bike_serial_num, :id)%>
+          <%= form.select :bike_id, Bike.where(:available => true).pluck(:bike_serial_num, :id)%>
         </div>
 
         <!-- <div class="field">

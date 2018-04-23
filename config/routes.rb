@@ -1,6 +1,15 @@
 # == Route Map
 #
 #         Prefix Verb   URI Pattern                    Controller#Action
+#    session_new GET    /session/new(.:format)         session#new
+#     pages_home GET    /pages/home(.:format)          pages#home
+#           root GET    /                              pages#home
+#          users POST   /users(.:format)               users#create
+#       new_user GET    /users/new(.:format)           users#new
+#          login GET    /login(.:format)               session#new
+#                POST   /login(.:format)               session#create
+#                DELETE /login(.:format)               session#destroy
+#                GET    /                              pages#index
 #        rentals GET    /rentals(.:format)             rentals#index
 #                POST   /rentals(.:format)             rentals#create
 #     new_rental GET    /rentals/new(.:format)         rentals#new
@@ -9,9 +18,9 @@
 #                PATCH  /rentals/:id(.:format)         rentals#update
 #                PUT    /rentals/:id(.:format)         rentals#update
 #                DELETE /rentals/:id(.:format)         rentals#destroy
-#          users GET    /users(.:format)               users#index
+#                GET    /users(.:format)               users#index
 #                POST   /users(.:format)               users#create
-#       new_user GET    /users/new(.:format)           users#new
+#                GET    /users/new(.:format)           users#new
 #      edit_user GET    /users/:id/edit(.:format)      users#edit
 #           user GET    /users/:id(.:format)           users#show
 #                PATCH  /users/:id(.:format)           users#update
@@ -49,9 +58,6 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
-
-
-  root :to => 'pages#index'
 
   resources :rentals
   resources :users

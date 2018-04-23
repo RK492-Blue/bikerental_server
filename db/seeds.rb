@@ -40,11 +40,11 @@ s8 = Bikestand.create(:location => 'William Street', :bikestand_long => 151.2203
 s9 = Bikestand.create(:location => 'Hunt Street', :bikestand_long => 151.218912, :bikestand_lat => -33.879783)
 
 User.destroy_all
-u1 = User.create(:email => 'joel@co.au', :password => 'joel', :user_type => 'admin')
-u2 = User.create(:email => 'winnie@co.au', :password => 'winnie', :user_type => 'user')
-u3 = User.create(:email => 'ricky@co.au', :password => 'ricky', :user_type => 'user')
-u4 = User.create(:email => 'gurdeep@co.au', :password => 'gurdeep', :user_type => 'user')
-u5 = User.create(:email => 'meenao@co.au', :password => 'meena', :user_type => 'user')
+u1 = User.create(:name => 'Joel', :email => 'joel@co.au', :password => 'joel', :user_type => 'admin')
+u2 = User.create(:name => 'Winnie', :email => 'winnie@co.au', :password => 'winnie', :user_type => 'user')
+u3 = User.create(:name => 'Ricky', :email => 'ricky@co.au', :password => 'ricky', :user_type => 'user')
+u4 = User.create(:name => 'Gurdeep', :email => 'gurdeep@co.au', :password => 'gurdeep', :user_type => 'user')
+u5 = User.create(:name => 'Meena', :email => 'meena@co.au', :password => 'meena', :user_type => 'user')
 
 s1.bikes << b1 << b3
 s2.bikes << b5 << b7

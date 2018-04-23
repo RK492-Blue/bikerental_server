@@ -6,4 +6,5 @@ $(document).ready(function () {
     $('.bikes').hide().attr('disabled', true);
     $('#bikestand_' + standID).fadeIn().attr('disabled', false);
   })
+
 });

@@ -25,16 +25,13 @@
         </div>
 
         <div class="field">
-          <!-- <%= form.label :bike_id %>
-          <%= form.select :bike_id, Bike.where(:available => true).pluck(:bike_serial_num, :id)%>-->
-
         <p>Bikes available on this stand</p>
-        <% Bikestand.all.each do |stand| %>
-          <%= select_tag "rental[bike_id]",
+          <% Bikestand.all.each do |stand| %>
+            <%= select_tag "rental[bike_id]",
                 options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),
                 :id => "bikestand_#{stand.id}", :class => 'bikes' %>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
 
         <div class="field">
         <%= form.hidden_field(:user_id, {:value=>@current_user.id}) %>
@@ -42,8 +39,8 @@
 
         <div class="field">
           <%= form.label :start_time %>
-          <%= form.datetime_select :start_time, id: :rental_start_time %>
-        </div> <%# TODO: add a Time.now option %>
+          <%= form.text_field :start_time, id: :rental_start_time %>
+        </div>
 
         <div class="actions">
           <%= form.submit "Hire a Bike"%>

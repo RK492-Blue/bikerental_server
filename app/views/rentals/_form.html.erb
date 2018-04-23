@@ -51,7 +51,7 @@
           <%= form.label :start_stand_id %>
           <!-- <%= form.number_field :start_stand_id, id: :rental_start_stand_id %> -->
           <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), :include_blank => true %>
-        </div
+        </div>
 
         <div class="field">
           <%= form.label :bike_id %>

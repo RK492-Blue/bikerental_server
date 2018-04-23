@@ -15,10 +15,8 @@
 #
 
 class Rental < ApplicationRecord
-
   belongs_to :bike, :optional =>true
   belongs_to :user, :optional =>true
-
   belongs_to :start_stand, :class_name => "Bikestand", optional: true,
     :foreign_key => "start_stand_id"
   belongs_to :end_stand, :class_name => "Bikestand", optional: true,

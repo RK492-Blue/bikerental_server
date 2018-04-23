@@ -1,18 +1,44 @@
   <h1>Bike Share App</h1>
 <main>
+  <!-- <% if @current_user.nil? %>
+    <h2>Ready to Go!!!!!</h2>
+    <h2>Just Ride! Nothing holds you back</h2>
+    <h3>When you're on the road, it's always safety first </h3>
+    <h2>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h2>
+  <% else @current_user.present? %>
+          <h2>Ready to Go!!!!!</h2>
+          <p>Just Ride! Nothing holds you back</p>
+          <p>When you're on the road, it's always safety first </p>
+          <div><%= link_to 'Hire Bike', new_rental_path %></div>
+          <div><%= link_to 'Rental History', rental_user_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
+  <% end %> -->
+
   <% if @current_user.nil? %>
     <h2>Ready to Go!!!!!</h2>
     <h2>Just Ride! Nothing holds you back</h2>
     <h3>When you're on the road, it's always safety first </h3>
     <h2>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h2>
-  <% elsif @current_user.present? %>
-    <h2>Ready to Go!!!!!</h2>
-    <p>Just Ride! Nothing holds you back</p>
-    <p>When you're on the road, it's always safety first </p>
-    <div><%= link_to 'Hire Bike', new_rental_path %></div>
-    <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>
-    <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
+  <% else @current_user.present? %>
+          <% if @current_user.present? && @current_user.user_type === 'admin' %>
+          <h2>Ready to Go!!!!!</h2>
+          <p>Just Ride! Nothing holds you back</p>
+          <p>When you're on the road, it's always safety first </p>
+          <div><%= link_to 'Hire Bike', new_rental_path %></div>
+          <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
+
+          <% elsif @current_user.present? && @current_user.user_type === 'user' %>
+          <h2>Ready to Go!!!!!</h2>
+          <p>Just Ride! Nothing holds you back</p>
+          <p>When you're on the road, it's always safety first </p>
+          <div><%= link_to 'Hire Bike', new_rental_path %></div>
+          <div><%= link_to 'Rental History', rental_user_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
+         <% end %>
   <% end %>
+
+
+
+
+
 </main>
 
 <aside>

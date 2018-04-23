@@ -33,7 +33,7 @@
 #                PATCH  /bikes/:id(.:format)           bikes#update
 #                PUT    /bikes/:id(.:format)           bikes#update
 #                DELETE /bikes/:id(.:format)           bikes#destroy
-#
+# 
 
 Rails.application.routes.draw do
   resources :rentals

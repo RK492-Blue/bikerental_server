@@ -7,6 +7,7 @@
     <tr>
       <th>Bike serial num</th>
       <th>Bikestand</th>
+      <th>Available</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= bike.bike_serial_num %></td>
         <td><%= bike.bikestand_id %></td>
+        <td><%= bike.available %></td>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>

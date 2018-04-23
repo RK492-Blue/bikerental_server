@@ -11,4 +11,5 @@
 
 class Bike < ApplicationRecord
   belongs_to :bikestand, :optional => true
+  validates :bikestand, numericality: { greater_than_or_equal_to: 1 }
 end

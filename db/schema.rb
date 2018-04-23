@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180420043454) do
   create_table "bikes", force: :cascade do |t|
     t.string "bike_serial_num"
     t.integer "bikestand_id"
+    t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

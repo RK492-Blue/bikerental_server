@@ -6,33 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# create_table "bikes", force: :cascade do |t|
-#   t.string "bike_serial_num"
-#   t.integer "bikestand_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-#
-# create_table "bikestands", force: :cascade do |t|
-#   t.text "location"
-#   t.text "bikestand_long"
-#   t.text "bikestand_lat"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
+
 
 
 Bike.destroy_all
-b1 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 1)
-b2 = Bike.create(:bike_serial_num => 'A2', :bikestand_id => 2)
-b3 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 3)
-b4 = Bike.create(:bike_serial_num => 'B1', :bikestand_id => 4)
-b5 = Bike.create(:bike_serial_num => 'C1', :bikestand_id => 5)
-b6 = Bike.create(:bike_serial_num => 'C2', :bikestand_id => 6)
-b7 = Bike.create(:bike_serial_num => 'C3', :bikestand_id => 7)
-b8 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 8)
-b9 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 9)
-b10 = Bike.create(:bike_serial_num => 'A3', :bikestand_id => 10)
+b1 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 1, :available => 't')
+b2 = Bike.create(:bike_serial_num => 'A2', :bikestand_id => 2, :available => 't')
+b3 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 3, :available => 't')
+b4 = Bike.create(:bike_serial_num => 'B1', :bikestand_id => 4, :available => 't')
+b5 = Bike.create(:bike_serial_num => 'C1', :bikestand_id => 5, :available => 't')
+b6 = Bike.create(:bike_serial_num => 'C2', :bikestand_id => 6, :available => 't')
+b7 = Bike.create(:bike_serial_num => 'C3', :bikestand_id => 7, :available => 't')
+b8 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 8, :available => 't')
+b9 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 9, :available => 't')
+b10 = Bike.create(:bike_serial_num => 'A3', :bikestand_id => 10, :available => 't')
 
 Bikestand.destroy_all
 s1 = Bikestand.create(:location => '1 Market Street', :bikestand_long => 151.204644, :bikestand_lat => -33.871322)

@@ -42,7 +42,7 @@
 #                PATCH  /bikes/:id(.:format)           bikes#update
 #                PUT    /bikes/:id(.:format)           bikes#update
 #                DELETE /bikes/:id(.:format)           bikes#destroy
-# 
+#
 
 Rails.application.routes.draw do
 
@@ -58,9 +58,6 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
-
-
-  root :to => 'pages#index'
 
   resources :rentals
   resources :users

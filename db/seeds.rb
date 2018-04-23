@@ -23,6 +23,18 @@
 
 
 Bike.destroy_all
+<<<<<<< HEAD
+b1 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 1, :available => 'Y')
+b2 = Bike.create(:bike_serial_num => 'A2', :bikestand_id => 2, :available => 'Y')
+b3 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 3, :available => 'Y')
+b4 = Bike.create(:bike_serial_num => 'B1', :bikestand_id => 4, :available => 'Y')
+b5 = Bike.create(:bike_serial_num => 'C1', :bikestand_id => 5, :available => 'Y')
+b6 = Bike.create(:bike_serial_num => 'C2', :bikestand_id => 6, :available => 'Y')
+b7 = Bike.create(:bike_serial_num => 'C3', :bikestand_id => 7, :available => 'Y')
+b8 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 8, :available => 'Y')
+b9 = Bike.create(:bike_serial_num => 'B4', :bikestand_id => 9, :available => 'Y')
+b10 = Bike.create(:bike_serial_num => 'A3', :bikestand_id => 10, :available => 'Y')
+=======
 b1 = Bike.create(:bike_serial_num => 'A1')
 b2 = Bike.create(:bike_serial_num => 'A2')
 b3 = Bike.create(:bike_serial_num => 'B2')
@@ -39,6 +51,7 @@ b13 = Bike.create(:bike_serial_num => 'E3')
 b14 = Bike.create(:bike_serial_num => 'E4')
 b15 = Bike.create(:bike_serial_num => 'E5')
 b16 = Bike.create(:bike_serial_num => 'E6')
+>>>>>>> 2ce669fb50f4b19c49c47817643ea8fa644bf2e6
 
 Bikestand.destroy_all
 s1 = Bikestand.create(:location => '1 Market Street', :bikestand_long => 151.204644, :bikestand_lat => -33.871322)

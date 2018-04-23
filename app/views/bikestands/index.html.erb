@@ -18,9 +18,13 @@
         <td><%= bikestand.location %></td>
         <td><%= bikestand.bikestand_long %></td>
         <td><%= bikestand.bikestand_lat %></td>
+        <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
         <td><%= link_to 'Show', bikestand %></td>
         <td><%= link_to 'Edit', edit_bikestand_path(bikestand) %></td>
         <td><%= link_to 'Destroy', bikestand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +32,6 @@
 
 <br>
 
+<% if @current_user.present? && @current_user.user_type == 'admin' %>
 <%= link_to 'New Bikestand', new_bikestand_path %>
+<% end %>

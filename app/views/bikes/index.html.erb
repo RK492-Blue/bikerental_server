@@ -15,17 +15,26 @@
     <% @bikes.each do |bike| %>
       <tr>
         <td><%= bike.bike_serial_num %></td>
+<<<<<<< HEAD
         <% if bike.bikestand.present? %>
           <td><%= bike.bikestand.location %></td>
         <%end%>
+=======
+        <td><%= bike.bikestand_id %></td>
+        <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
+>>>>>>> a700a0262119f2a4fc4a48287b834665116f4a7b
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if @current_user.present? && @current_user.user_type == 'admin' %>
 <%= link_to 'New Bike', new_bike_path %>
+
+<% end %>

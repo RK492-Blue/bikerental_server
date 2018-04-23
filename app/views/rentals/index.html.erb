@@ -82,17 +82,17 @@
           <td><%= rental.bike.bike_serial_num%></td>
 
           <td><%= rental.start_time %></td>
-<<<<<<< HEAD
+
           <td><%= rental.end_time %></td>
 
-=======
+
           <%if rental.end_time.present? %>
             <td> <%= rental.end_time.strftime('%e, %b, %Y, %l:%M, %P') %>  </td>
             <%else%>
             <td></td>
           <%end%>
           <!--*******************************************-->
->>>>>>> c887a7e0977fe71b51086ae5beaf602477283c92
+
           <td><%= rental.start_stand.location %></td>
           <% if rental.end_stand_id.present? %>
           <td><%= rental.end_stand.location %></td>

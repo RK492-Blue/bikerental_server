@@ -14,7 +14,7 @@
 <p> Start time:<%= @rental.start_time.strftime '%l:%M:%S %p %A' %></p>
 <p> End time:<%= @rental.end_time.strftime '%l:%M:%S %p %A' if @rental.end_time.present? %></p>
 
-<p>Cost:<%= number_to_currency(5 * @rental.duration) %></p>
+<p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>
 <p>Duration: <%= @rental.duration %> hours</p>
 
 <%= link_to 'Back', rentals_path %>

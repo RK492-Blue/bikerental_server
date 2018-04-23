@@ -7,6 +7,7 @@
     <tr>
       <th>Bike serial num</th>
       <th>Bikestand</th>
+      <th>Available</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,8 +16,17 @@
     <% @bikes.each do |bike| %>
       <tr>
         <td><%= bike.bike_serial_num %></td>
-        <td><%= bike.bikestand_id %></td>
+
+        <% if bike.bikestand.present? %>
+          <td><%= bike.bikestand.location %></td>
+        <%end%>
+
+        <!-- <td><%= bike.bikestand_id %></td> -->
+
+        <td><%= bike.available %></td>
+
         <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
 
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>

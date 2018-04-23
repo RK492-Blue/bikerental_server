@@ -59,9 +59,15 @@
           <%= form.select :bike_id, Bike.where(:available => true).pluck(:bike_serial_num, :id)%>
 
           <!-- ****************************************** -->
-          
+
          <!-- ***************************************** -->
         </div>
+<h2>bikes by stand</h2>
+        <% Bikestand.all.each do |stand| %>
+          <%= select_tag "rental[bike_id]",
+                options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),
+                :id => "bikestand_#{stand.id}", :class => 'bikes' %>
+        <% end %>
 
         <!-- <div class="field">
           <%= form.label :user_id %> -->

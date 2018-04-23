@@ -1,5 +1,5 @@
 <%if @current_user.present? && !@rental.end_stand_id.present? %>
-<p>You have taken <%= @rental.bike.bike_serial_num %>.</p><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time %></p>
+<p>You have rented bike <%= @rental.bike.bike_serial_num %>.</p><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time %></p>
 
 <%= link_to 'Return Bike', edit_rental_path(@rental) %> |
 

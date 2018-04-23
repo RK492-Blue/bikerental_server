@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // jQuery(function() {
 //   let bikes;
 //   bikes = $('#rental_bike_id').html();
@@ -28,4 +29,14 @@ $('#end_time').on('change',function()
 
   $('#setup_hours').val(diff);
 });
+=======
+
+$(document).ready(function () {
+  $('.bikes').hide().attr('disabled', true);
+  $('[name="rental[start_stand_id]"]').on('change', function () {
+    const standID = $(this).val();
+    $('.bikes').hide().attr('disabled', true);
+    $('#bikestand_' + standID).fadeIn().attr('disabled', false);
+  })
+>>>>>>> e5349e75dd0d2c939912ad12fd215f213a908337
 });

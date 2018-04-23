@@ -1,16 +1,28 @@
-<h1>Bike Share App</h1>
-<% if @current_user.nil? %>
-  <h2>Ready to Go!!!!!</h2>
-  <h2>Just Ride!Nothing holds you back</h2>
-  <h3>When you're on the road, its always safety first </h3>
-  <h2>Please Sign-in to hire a bike!</h2>
-<% elsif @current_user.present? %>
-<p></p>
-  <h3>Welcome <%= @current_user.name %></h3>
-  <p></p>
-  <h2>Ready to Go!!!!!</h2>
-  <p>Just Ride! Nothing holds you back</p>
-  <p>When you're on the road, its always safety first </p>
-  <div><%= link_to 'Hire Bike', new_rental_path %></div>
-  <div><%= link_to 'Profile', rentals_path %></div>
-<% end %>
+  <h1>Bike Share App</h1>
+<main>
+  <% if @current_user.nil? %>
+    <h2>Ready to Go!!!!!</h2>
+    <h2>Just Ride! Nothing holds you back</h2>
+    <h3>When you're on the road, it's always safety first </h3>
+    <h2>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h2>
+  <% elsif @current_user.present? %>
+    <h2>Ready to Go!!!!!</h2>
+    <p>Just Ride! Nothing holds you back</p>
+    <p>When you're on the road, it's always safety first </p>
+    <div><%= link_to 'Hire Bike', new_rental_path %></div>
+    <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>
+    <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
+  <% end %>
+</main>
+
+<aside>
+  <div class="step01">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="step02">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <div class="step03">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</aside>

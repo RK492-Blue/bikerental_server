@@ -1,36 +1,4 @@
 
-<!-- <%= form_with(model: rental, local: true) do |form| %>
-  <% if rental.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
-
-      <ul>
-      <% rental.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time, id: :rental_start_time %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :start_stand %>
-    <%= form.select :start_stand_id, Bikestand.pluck(:location, :id), :include_blank => true %>
-
-  </div>
-
-  <div class="field">
-    <%= form.label :bike_id %>
-    <%= form.number_field :bike_id, id: :rent %>
-  </div> -->
-
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -49,29 +17,29 @@
 
         <div class="field">
           <%= form.label :start_stand_id %>
-          <!-- <%= form.number_field :start_stand_id, id: :rental_start_stand_id %> -->
           <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), :include_blank => true %>
-        </div
-
-        <div class="field">
-          <%= form.label :bike_id %>
-          <!-- <%= form.number_field :bike_id, id: :rental_bike_id %> -->
-          <%= form.select :bike_id, Bike.where(:available => true).pluck(:bike_serial_num, :id)%>
         </div>
 
-        <!-- <div class="field">
-          <%= form.label :user_id %> -->
-          <!-- <%= form.number_field :user_id, id: :rental_user_id %> -->
-          <%= form.hidden_field(:user_id, {:value=>@current_user.id}) %>
+        <div class="field">
+          <!-- <%= form.label :bike_id %>
+          <%= form.select :bike_id, Bike.where(:available => true).pluck(:bike_serial_num, :id)%>-->
 
-        <!-- </div> -->
+        <p>Bikes available on this stand</p>
+        <% Bikestand.all.each do |stand| %>
+          <%= select_tag "rental[bike_id]",
+                options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),
+                :id => "bikestand_#{stand.id}", :class => 'bikes' %>
+        <% end %>
+      </div>
+
+        <div class="field">
+        <%= form.hidden_field(:user_id, {:value=>@current_user.id}) %>
+        </div>
 
         <div class="field">
           <%= form.label :start_time %>
           <%= form.datetime_select :start_time, id: :rental_start_time %>
         </div> <%# TODO: add a Time.now option %>
-
-
 
         <div class="actions">
           <%= form.submit "Hire a Bike"%>

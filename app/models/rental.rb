@@ -7,8 +7,8 @@
 #  user_id        :integer
 #  start_time     :datetime
 #  end_time       :datetime
-#  start_stand_id :text
-#  end_stand_id   :text
+#  start_stand_id :integer
+#  end_stand_id   :integer
 #  cost           :float
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null

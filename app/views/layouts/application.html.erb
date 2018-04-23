@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'main' %>
+
   </head>
 
   <body>
@@ -26,10 +27,16 @@
           <%= link_to 'Bike Stands', bikestands_path %>
           <% end %>
       </nav>
+<<<<<<< HEAD
       <%= yield %>
       <footer>
         &copy; 2018 Gurdeep, Meena, Ricky, Winnie
       </footer>
     </div>
+=======
+    <%= yield %>
+  </div>
+
+>>>>>>> 39591c268b91f1e13f4a2af35a2711d4bbc768b1
   </body>
 </html>

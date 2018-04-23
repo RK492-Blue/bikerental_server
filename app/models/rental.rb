@@ -21,4 +21,12 @@ class Rental < ApplicationRecord
     :foreign_key => "start_stand_id"
   belongs_to :end_stand, :class_name => "Bikestand", optional: true,
     :foreign_key => "end_stand_id"
+
+  def duration
+    if end_time
+      ((end_time - start_time) / 3600).ceil # Duration in hours
+    else
+      ((Time.now - start_time) / 3600).ceil # Hours
+    end
+  end
 end

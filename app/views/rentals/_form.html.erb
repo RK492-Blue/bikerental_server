@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+<%= form_with(model: rental, local: true) do |form| %>
+  <% if rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+      <% rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time, id: :rental_start_time %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :start_stand %>
+    <%= form.select :start_stand_id, Bikestand.pluck(:location, :id), :include_blank => true %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :bike_id %>
+    <%= form.number_field :bike_id, id: :rent %>
+  </div>
+=======
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -17,7 +50,7 @@
         <div class="field">
           <%= form.label :start_stand_id %>
           <!-- <%= form.number_field :start_stand_id, id: :rental_start_stand_id %> -->
-          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id)%>
+          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), :include_blank => true %>
         </div
 
         <div class="field">
@@ -36,23 +69,19 @@
         <div class="field">
           <%= form.label :start_time %>
           <%= form.datetime_select :start_time, id: :rental_start_time %>
-        </div>
+        </div> <%# TODO: add a Time.now option %>
 
 
-
-
-        <!-- <div class="field">
-          <%= form.label :end_stand_id %>
-          <%= form.number_field :end_stand_id, id: :rental_end_stand_id %>
-        </div> -->
-
-        <!-- <div class="field">
-          <%= form.label :cost %>
-          <%= form.text_field :cost, id: :rental_cost %>
-        </div> -->
 
         <div class="actions">
           <%= form.submit "Hire a Bike"%>
         </div>
         <% end %>
+<% end %>
+>>>>>>> a700a0262119f2a4fc4a48287b834665116f4a7b
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

@@ -29,10 +29,8 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
-
     @rental = Rental.new(rental_params)
 
-    # redirect_to @rental
     respond_to do |format|
       if @rental.save
         Bike.where(:id => @rental.bike_id).update(available: 'f')
@@ -52,7 +50,7 @@ class RentalsController < ApplicationController
     respond_to do |format|
       if @rental.update(rental_params)
         Bike.where(:id => @rental.bike_id).update(available: 't',:bikestand_id =>@rental.end_stand_id)
-        
+
         format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else

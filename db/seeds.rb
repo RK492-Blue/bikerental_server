@@ -6,20 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# create_table "bikes", force: :cascade do |t|
-#   t.string "bike_serial_num"
-#   t.integer "bikestand_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
-#
-# create_table "bikestands", force: :cascade do |t|
-#   t.text "location"
-#   t.text "bikestand_long"
-#   t.text "bikestand_lat"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-# end
+
 
 
 Bike.destroy_all
@@ -30,26 +17,15 @@ b4 = Bike.create(:bike_serial_num => 'B1', :bikestand_id => 4, :available => 'Y'
 b5 = Bike.create(:bike_serial_num => 'C1', :bikestand_id => 5, :available => 'Y')
 b6 = Bike.create(:bike_serial_num => 'C2', :bikestand_id => 6, :available => 'Y')
 b7 = Bike.create(:bike_serial_num => 'C3', :bikestand_id => 7, :available => 'Y')
-b8 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 8, :available => 'Y')
-b9 = Bike.create(:bike_serial_num => 'B4', :bikestand_id => 9, :available => 'Y')
-b10 = Bike.create(:bike_serial_num => 'A3', :bikestand_id => 10, :available => 'Y')
-
-b1 = Bike.create(:bike_serial_num => 'A1')
-b2 = Bike.create(:bike_serial_num => 'A2')
-b3 = Bike.create(:bike_serial_num => 'B2')
-b4 = Bike.create(:bike_serial_num => 'B1')
-b5 = Bike.create(:bike_serial_num => 'C1')
-b6 = Bike.create(:bike_serial_num => 'C2')
-b7 = Bike.create(:bike_serial_num => 'C3')
-b8 = Bike.create(:bike_serial_num => 'D1')
-b9 = Bike.create(:bike_serial_num => 'D2')
-b10 = Bike.create(:bike_serial_num => 'D3')
-b11 = Bike.create(:bike_serial_num => 'E1')
-b12 = Bike.create(:bike_serial_num => 'E2')
-b13 = Bike.create(:bike_serial_num => 'E3')
-b14 = Bike.create(:bike_serial_num => 'E4')
-b15 = Bike.create(:bike_serial_num => 'E5')
-b16 = Bike.create(:bike_serial_num => 'E6')
+b8 = Bike.create(:bike_serial_num => 'D1', :bikestand_id => 8, :available => 'Y')
+b9 = Bike.create(:bike_serial_num => 'D2', :bikestand_id => 9, :available => 'Y')
+b10 = Bike.create(:bike_serial_num => 'D3', :bikestand_id => 10, :available => 'Y')
+b11 = Bike.create(:bike_serial_num => 'E1', :bikestand_id => 11, :available => 'Y')
+b12 = Bike.create(:bike_serial_num => 'E2', :bikestand_id => 12, :available => 'Y')
+b13 = Bike.create(:bike_serial_num => 'E3', :bikestand_id => 13, :available => 'Y')
+b14 = Bike.create(:bike_serial_num => 'E4', :bikestand_id => 14, :available => 'Y')
+b15 = Bike.create(:bike_serial_num => 'E5', :bikestand_id => 15, :available => 'Y')
+b16 = Bike.create(:bike_serial_num => 'E6', :bikestand_id => 16, :available => 'Y')
 
 
 Bikestand.destroy_all

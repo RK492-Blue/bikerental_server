@@ -6,7 +6,7 @@
 <%= link_to 'Back', rentals_path %>
 
 <%else %>
-<p>Thankyou for choosing BikeShare App</p>
+<p>Thank you for choosing BikeShare App</p>
 <p>Receipt Details</p>
 <p>Bike: <%= @rental.bike.bike_serial_num %>.</p>
 <p>Travel Details:</p>
@@ -14,7 +14,7 @@
 <p> Start time:<%= @rental.start_time %></p>
 <p> End time:<%= @rental.end_time %></p>
 
-<p>Cost:<%= @rental.cost %></p>
+<p>Cost:<%= number_to_currency(@rental.cost) %></p>
 <p>Duration:</p>
 
 <%= link_to 'Back', rentals_path %>

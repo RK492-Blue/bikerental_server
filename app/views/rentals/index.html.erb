@@ -40,8 +40,8 @@
         <% end %>
         <!--*******************************************-->
         <td><%= rental.cost %></td>
-        <td><%= link_to 'Show', rental %></td>
-        <td><%= link_to 'Return', edit_rental_path(rental) %></td>
+        <td><%= link_to 'View Details', rental %></td>
+        <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>
         <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
@@ -79,9 +79,9 @@
 
           <td><%= number_to_currency(rental.cost) %></td>
           <td><%= rental.cost %></td>
-          <td><%= link_to 'Show', rental %></td>
+          <td><%= link_to 'View Details', rental %></td>
           <%if !rental.end_stand_id.present? %>
-          <td><%= link_to 'Return', edit_rental_path(rental) %></td>
+          <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>
           <% else %>
           <td></td>
           <%end %>

@@ -15,19 +15,12 @@
 #
 
 class Rental < ApplicationRecord
-<<<<<<< HEAD
-  belongs_to :start_stand, :class_name => 'Bikestand',
-    :foreign_key => "start_stand_id"
-  belongs_to :end_stand, :class_name => 'Bikestand',
-    :foreign_key => "end_stand_id", :optional => true
-# *******************************
 
   belongs_to :bike, :optional =>true
   belongs_to :user, :optional =>true
-=======
+
   belongs_to :start_stand, :class_name => "Bikestand", optional: true,
     :foreign_key => "start_stand_id"
   belongs_to :end_stand, :class_name => "Bikestand", optional: true,
     :foreign_key => "end_stand_id"
->>>>>>> 2ce669fb50f4b19c49c47817643ea8fa644bf2e6
 end

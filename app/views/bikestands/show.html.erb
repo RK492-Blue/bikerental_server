@@ -18,15 +18,11 @@
 </p>
 
 
-
-  <%= link_to 'Edit', edit_bikestand_path(@bikestand) %> |
-  <%= link_to 'Back', bikestands_path %>
-
 <p>
   <strong>Bikes:</strong>
   <ul>
     <% @bikestand.bikes.each do |bike| %>
-      <li> <%= bike.bike_serial_num %></i>
+      <li> <%= link_to bike.bike_serial_num, bike_path %> </li>
     <% end %>
   </ul>
 </p>

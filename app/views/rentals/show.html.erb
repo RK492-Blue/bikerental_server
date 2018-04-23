@@ -9,10 +9,10 @@
 <p>Thank you for choosing BikeShare App</p>
 <p>Receipt Details</p>
 <p>Bike: <%= @rental.bike.bike_serial_num %>.</p>
-<p>Travel Details:</p>
+<p>Travel Details:-</p>
 <p><%= @rental.start_stand.location %> to <%= @rental.end_stand.location %></p>
-<p> Start time:<%= @rental.start_time %></p>
-<p> End time:<%= @rental.end_time %></p>
+<p> Start time:<%= @rental.start_time.strftime '%l:%M:%S %p %A' %></p>
+<p> End time:<%= @rental.end_time.strftime '%l:%M:%S %p %A' %></p>
 
 <p>Cost:<%= number_to_currency(@rental.cost) %></p>
 <p>Duration:</p>

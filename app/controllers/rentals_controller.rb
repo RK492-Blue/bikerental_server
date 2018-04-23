@@ -7,6 +7,10 @@ class RentalsController < ApplicationController
     @rentals = Rental.all
   end
 
+  def rental_user
+    @rental_user = Rental.where(:user_id => @current_user.id)
+  end
+
   # GET /rentals/1
   # GET /rentals/1.json
   def show

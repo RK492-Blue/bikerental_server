@@ -7,7 +7,7 @@
     <tr>
       <th>Bike serial num</th>
       <th>Bikestand</th>
-      
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,7 +25,7 @@
 
 
 
-        <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+        <%if @current_user.present? && @current_user.user_type == 'admin'%>
 
 
         <td><%= link_to 'Show', bike %></td>

@@ -18,29 +18,47 @@ body {
   padding: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline;
+
+}
+
+nav {
+  margin: 0 auto;
+  padding: 2em;
+  background-color: $primary-blue;
+  a {
+    color: white;
+  }
 }
 
 #bodywrapper {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(90deg, #8fc7ea 33.33%, white 33.33%, white 66.66%, #fff47a 66.66%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   text-align: center;
-  nav {
+  vertical-align: baseline;
+  main {
+    display: inline-block;
+
+  }
+  aside {
     margin: 0 auto;
   }
 
 
 }
 
-.maincontent {
-  display: inline-block;
 
+
+
+
+footer {
+  background-color: $primary-blue;
+  color: white;
+  padding: 2em;
 }
-
 
 
 

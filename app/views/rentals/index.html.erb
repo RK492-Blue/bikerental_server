@@ -32,7 +32,7 @@
         <td><%= rental.start_time %></td>
         <td><%= rental.end_time %></td>
         <td><%= rental.start_stand.location %></td>
-<<<<<<< HEAD
+
         <%if rental.end_stand_id.present?%>
         <td><%= rental.end_stand.location %></td>
         <%else %>
@@ -42,7 +42,7 @@
         <td><%= rental.cost %></td>
         <td><%= link_to 'Show', rental %></td>
         <td><%= link_to 'Return', edit_rental_path(rental) %></td>
-=======
+
           <%if rental.end_stand_id.present?%>
             <td><%= rental.end_stand.location %></td>
           <%else %>
@@ -52,7 +52,7 @@
         <td><%= number_to_currency(rental.cost) %></td>
         <td><%= link_to 'View Details', rental %></td>
         <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>
->>>>>>> e5349e75dd0d2c939912ad12fd215f213a908337
+
         <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>

@@ -1,5 +1,7 @@
 {
   "name": "bikerental_server",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery-datetimepicker": "^2.5.20"
+  }
 }

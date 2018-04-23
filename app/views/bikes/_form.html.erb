@@ -1,21 +1,26 @@
-<%= form_with(model: bike, local: true) do |form| %>
-  <% if bike.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
+<% if @current_user.nil? %>
+    <h2>Restricted to Admins!</h2>
+    <% elsif @current_user.present? && @current_user.user_type == 'admin' %>
 
-      <ul>
-      <% bike.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+       <%= form_with(model: bike, local: true) do |form| %>
+        <% if bike.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(bike.errors.count, "error") %> prohibited this bike from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :bike_serial_num %>
-    <%= form.text_field :bike_serial_num, id: :bike_bike_serial_num %>
-  </div>
+            <ul>
+            <% bike.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
 
+          <div class="field">
+            <%= form.label :bike_serial_num %>
+            <%= form.text_field :bike_serial_num, id: :bike_bike_serial_num %>
+          </div>
+
+<<<<<<< HEAD
 
   <div class="field">
     <%= form.label :bikestand_id %>
@@ -27,8 +32,15 @@
     <%= form.label :available %>
     <%= form.text_field :available, id: :bike_available %>
   </div>
+=======
+          <div class="field">
+            <%= form.label :bikestand_id %>
+            <%= form.number_field :bikestand_id, id: :bike_bikestand_id %>
+          </div>
+>>>>>>> a700a0262119f2a4fc4a48287b834665116f4a7b
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+      <% end %>
 <% end %>

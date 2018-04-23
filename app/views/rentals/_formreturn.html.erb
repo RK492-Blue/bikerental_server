@@ -1,0 +1,41 @@
+<% if @current_user.nil? %>
+    <h2>Please Sign-in to hire a bike!</h2>
+    <% elsif @current_user.present? %>
+        <%= form_with(model: rental, local: true) do |formreturn| %>
+        <% if rental.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+            <ul>
+            <% rental.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+
+
+        <div class="field">
+          <%= formreturn.label :end_time%>
+          <%= formreturn.datetime_select :end_time, id: :rental_end_time %> <%# TODO: add a Time.now option %>
+        </div>
+
+
+
+        <div class="field">
+          <%= formreturn.label :end_stand_id %>
+          <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), :include_blank => true%>
+        </div>
+
+        <div class="field">
+          <%= formreturn.label :cost %>
+          <%= formreturn.text_field :cost, id: :rental_cost %> <%# TODO: Calculate cost based on duration.  %>
+        </div>
+
+
+        <div class="actions">
+          <%= formreturn.submit %>
+        </div>
+        <% end %>
+<% end %>

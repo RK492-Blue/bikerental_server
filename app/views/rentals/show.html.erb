@@ -1,39 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%if @current_user.present? && !@rental.end_stand_id.present? %>
+<p>You have taken <%= @rental.bike.bike_serial_num %>.</p><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time %></p>
 
-<p>
-  <strong>Bike:</strong>
-  <%= @rental.bike_id %>
-</p>
+<%= link_to 'Return Bike', edit_rental_path(@rental) %> |
 
-<p>
-  <strong>User:</strong>
-  <%= @rental.user_id %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @rental.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @rental.end_time %>
-</p>
-
-<p>
-  <strong>Start station:</strong>
-  <%= @rental.start_station %>
-</p>
-
-<p>
-  <strong>End station:</strong>
-  <%= @rental.end_station %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= number_to_currency(@rental.cost) %>
-</p>
-
-<%= link_to 'Edit', edit_rental_path(@rental) %> |
 <%= link_to 'Back', rentals_path %>
+
+<%else %>
+<p>Thank you for choosing BikeShare App</p>
+<p>Receipt Details</p>
+<p>Bike: <%= @rental.bike.bike_serial_num %>.</p>
+<p>Travel Details:</p>
+<p><%= @rental.start_stand.location %> to <%= @rental.end_stand.location %></p>
+<p> Start time:<%= @rental.start_time %></p>
+<p> End time:<%= @rental.end_time %></p>
+
+<p>Cost:<%= number_to_currency(@rental.cost) %></p>
+<p>Duration:</p>
+
+<%= link_to 'Back', rentals_path %>
+
+
+<% end %>

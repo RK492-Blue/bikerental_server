@@ -6,9 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main' %>
   </head>
 
   <body>
+    <div class="container">
+      <div>
+        <% if @current_user.present? %>
+          <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+          <% else %>
+          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to 'Sign in', login_path %>
+          <% end %>
+      </div>
+
+      <%= link_to 'Home',root_path %>
+      <%= link_to 'Bikes',bikes_path %>
+      <%= link_to 'BikeStand', bikestands_path %>
+      <%= link_to 'Rentals',rentals_path%>
+      
+    </div>
     <%= yield %>
   </body>
 </html>

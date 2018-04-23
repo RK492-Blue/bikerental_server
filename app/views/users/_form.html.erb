@@ -16,22 +16,30 @@
     <%= form.text_area :name, id: :user_name %>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :user_type %>
     <%= form.text_area :user_type, id: :user_user_type %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_area :email, id: :user_email %>
+    <%= form.email_field :email, id: :user_email %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_area :password, id: :user_password %>
+    <%= form.password_field :password, id: :user_password %>
   </div>
 
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password %>
+  </div>
+
+  <%= form.hidden_field(:user_type, {:value => 'user'}) %>
+
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Sign Up"%>
   </div>
 <% end %>

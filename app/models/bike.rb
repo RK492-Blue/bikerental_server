@@ -5,6 +5,7 @@
 #  id              :integer          not null, primary key
 #  bike_serial_num :string
 #  bikestand_id    :integer
+#  available       :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

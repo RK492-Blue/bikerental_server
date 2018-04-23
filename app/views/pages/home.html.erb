@@ -5,12 +5,10 @@
   <h3>When you're on the road, its always safety first </h3>
   <h2>Please Sign-in to hire a bike!</h2>
 <% elsif @current_user.present? %>
-<p></p>
-  <h3>Welcome <%= @current_user.name %></h3>
-  <p></p>
+  <!-- <h3>Welcome <%# @current_user.name %></h3> -->
   <h2>Ready to Go!!!!!</h2>
   <p>Just Ride! Nothing holds you back</p>
   <p>When you're on the road, its always safety first </p>
   <div><%= link_to 'Hire Bike', new_rental_path %></div>
-  <div><%= link_to 'Profile', rentals_path %></div>
+  <div><%# link_to 'Profile', user_path %></div>
 <% end %>

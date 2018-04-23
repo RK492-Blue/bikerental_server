@@ -16,6 +16,11 @@
     <% @bikes.each do |bike| %>
       <tr>
         <td><%= bike.bike_serial_num %></td>
+<<<<<<< HEAD
+        <% if bike.bikestand.present? %>
+          <td><%= bike.bikestand.location %></td>
+        <%end%>
+=======
         <td><%= bike.bikestand_id %></td>
 <<<<<<< HEAD
         <td><%= bike.available %></td>

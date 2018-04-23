@@ -28,10 +28,10 @@
           <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), :include_blank => true%>
         </div>
 
-        <div class="field">
+        <!-- <div class="field">
           <%= formreturn.label :cost %>
-          <%= formreturn.text_field :cost, id: :rental_cost %> 
-        </div>
+          <%= formreturn.text_field :cost, id: :rental_cost %>
+        </div> -->
 
 
         <div class="actions">

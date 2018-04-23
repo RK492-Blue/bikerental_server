@@ -24,9 +24,9 @@ class Rental < ApplicationRecord
 
   def duration
     if end_time
-      ((end_time - start_time) / 3600).ceil # Duration in hours
+      ((end_time - start_time) / 3600.0).ceil # Duration in hours
     else
-      ((Time.now - start_time) / 3600).ceil # Hours
+      ((Time.now - start_time) / 3600.0).ceil # Hours
     end
   end
 end

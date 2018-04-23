@@ -6,5 +6,5 @@ const calculateCost = function(start, end){
 }
 
 $(document).ready(function () {
-  $('#rental_end_time, #rental_start_time').datetimepicker();
-})
+  $('#rental_end_time, #rental_start_time').datetimepicker()
+});

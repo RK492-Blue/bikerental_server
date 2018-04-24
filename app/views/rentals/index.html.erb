@@ -29,8 +29,24 @@
         <td><%= rental.bike.bike_serial_num %></td>
         <!-- <td><%= rental.user_id %></td> -->
         <td><%= rental.user.name%></td>
-        <td><%= rental.start_time %></td>
-        <td><%= rental.end_time %></td>
+
+
+        <!-- <td><%= rental.start_time %></td> -->
+        <!-- <td><%= rental.end_time %></td> -->
+
+        <%if rental.start_time.present? %>
+          <td> <%= rental.start_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
+          <%else%>
+          <td></td>
+        <%end%>
+
+        <%if rental.end_time.present? %>
+          <td> <%= rental.end_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
+          <%else%>
+          <td></td>
+        <%end%>
+
+        <!--*******************************************-->
         <td><%= rental.start_stand.location %></td>
 
         <%if rental.end_stand_id.present?%>
@@ -77,14 +93,21 @@
       <% @rental_user1.each do |rental| %>
         <tr>
           <td><%= rental.bike.bike_serial_num%></td>
+          <%if rental.start_time.present? %>
+            <td> <%= rental.start_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
+            <%else%>
+            <td></td>
+          <%end%>
+
 
           <td><%= rental.start_time %></td>
 
           <td><%= rental.end_time %></td>
 
 
+
           <%if rental.end_time.present? %>
-            <td> <%= rental.end_time.strftime('%e, %b, %Y, %l:%M, %P') %>  </td>
+            <td> <%= rental.end_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
             <%else%>
             <td></td>
           <%end%>

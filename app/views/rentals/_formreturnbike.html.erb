@@ -1,3 +1,4 @@
+
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -5,7 +6,6 @@
         <% if rental.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
-
             <ul>
             <% rental.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -24,6 +24,9 @@
         </div>
         <div class="field">
           <%= formreturn.label :cost %>
+          <%=  %>
+
+
           <%= formreturn.text_field :cost, id: :rental_cost %>
         </div>
         <div class="actions">
@@ -31,3 +34,18 @@
         </div>
         <% end %>
 <% end %>
+
+
+<p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>
+
+<!-- <form action="/charge" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js"
+    class="stripe-button"
+    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+    data-image="/square-image.png"
+    data-name="Demo Site"
+    data-description="2 widgets ($20.00)"
+    data-amount="2000">
+  </script>
+</form> -->

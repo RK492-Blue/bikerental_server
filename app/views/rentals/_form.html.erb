@@ -49,33 +49,66 @@
 <% end %>
 
 <%= content_tag :div, id: "map", data: {location: @bikestands} do %>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=mapLocation">
 </script>
 
 <script>
+
 let bikestand = {lat: -33.87, lng: 151.20}
+
 let map;
 // let ipAddress = '<%=  request.remote_ip %>'
-function initMap() {
+function mapLocation(locationID) {
+  if (locationID) { debugger; }
+  console.log('maplocation', locationID);
+  // debugger;
+
+  let locationList = $('#map').data('location')
+
+  // If we have a locationID, make that the new center of the map.
+  let selectedStand;
+  if (locationID) {
+    // TODO: use _.findBy instead of this loop
+    for (let i=0; i < locationList.length; i++) {
+      if (+locationID === locationList[i].id) {
+        selectedStand = locationList[i];
+        break;
+      }
+    }
+    bikestand.lat = +selectedStand.bikestand_lat;
+    bikestand.lng = +selectedStand.bikestand_long;
+  }
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: bikestand.lat, lng: bikestand.lng},
     zoom: 15
   });
   console.log($('#map').data('location') )
-  let locationList = $('#map').data('location')
-  for (var i = 0; i < locationList.length; i++) {
-    console.log( locationList[i] )
+  if (selectedStand) {
     marker = new google.maps.Marker ({
-     position: {lat: +locationList[i].bikestand_lat, lng: +locationList[i].bikestand_long},
+     position: {lat: +selectedStand.bikestand_lat, lng: +selectedStand.bikestand_long},
      map: map,
-     label: locationList[i].location
-    })
+     label: selectedStand.location
+   });
+   console.log(marker)
+  } else {
+    for (var i = 0; i < locationList.length; i++) {
+      console.log( locationList[i] );
+      marker = new google.maps.Marker ({
+       position: {lat: +locationList[i].bikestand_lat, lng: +locationList[i].bikestand_long},
+       map: map,
+       label: locationList[i].location
+      })
+    }
   }
 }
+$('[name="rental[start_stand_id]"]').on('change', function () {
+  const id = $(this).val();
+  mapLocation( id )
+});
 navigator.geolocation.getCurrentPosition( function(results) {
   console.log(results.coords.latitude, results.coords.longitude)
   bikestand = {lat: results.coords.latitude, lng: results.coords.longitude}
- // initMap()
+ mapLocation()
 })
 </script>
 

@@ -22,6 +22,7 @@ class RentalsController < ApplicationController
   # GET /rentals/new
   def new
     @rental = Rental.new
+    @bikestands = Bikestand.all
   end
 
   # GET /rentals/1/edit
@@ -31,6 +32,7 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
+    raise
     @rental = Rental.new(rental_params)
 
     respond_to do |format|

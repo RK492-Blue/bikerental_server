@@ -29,7 +29,7 @@ nav {
   margin: 0 auto;
   padding: 0;
   background-color: $main-drkyellow;
-  height: 120px;
+  height: 155px;
   z-index: 3;
     #logoOuter {
       background-color:$main-drkyellow;
@@ -59,7 +59,7 @@ nav {
         }
       }
     }
-    .navLinks {
+    .navInner {
       background-color: $main-medyellow;
       padding-top: 9em;
       margin-bottom: 1em;
@@ -88,8 +88,6 @@ nav {
 
 
 
-
-
 footer {
   background-color: $primary-blue;
   color: white;
@@ -97,6 +95,29 @@ footer {
 }
 
 
+@media (min-width: 480px){
+  .barLinks {
+    display: block;
+  }
+  .burgerLinks {
+    display: none;
+    .ham {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 481px){
+  .barLinks {
+    display: none;
+  }
+  .burgerLinks {
+    display: block;
+    .ham {
+      display: none;
+    }
+  }
+}
 
 // p, ol, ul, td
 //

@@ -15,14 +15,10 @@
         <% end %>
 
         <div class="field">
-          <%= formreturn.label :end_time%>
-          <%= formreturn.text_field :end_time, id: :rental_end_time %>
-        </div>
-        <div class="field">
           <%= formreturn.label :end_stand_id %>
           <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), :include_blank => true%>
         </div>
-<<<<<<< HEAD
+
 
         <!-- <div class="field">
           <%= formreturn.label :cost %>
@@ -30,8 +26,15 @@
         </div> -->
 
 
-=======
         <div class="field">
+          <%= formreturn.label :end_time%>
+          <%= formreturn.text_field :end_time, id: :rental_end_time %>
+        </div>
+
+
+
+
+        <!-- <div class="field">
           <%= formreturn.label :cost %>
           <%= formreturn.text_field :cost, id: :rental_cost %>
         </div>

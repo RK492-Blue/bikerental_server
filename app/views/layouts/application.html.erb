@@ -12,25 +12,49 @@
 
   <body>
     <div id="bodywrapper">
+
+
       <nav>
         <% if @current_user.present? %>
-          <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
-          <%= link_to 'Home',root_path %>
+        <div id="logoOuter">
+          <div id="logoInner">
+            <%= link_to 'Home',root_path %>
+          </div>
+        </div>
+        <div class="leftnav">
           <%= link_to 'Bikes',bikes_path %>
           <%= link_to 'Bike Stands', bikestands_path %>
+        </div>
+        <div class="rightnav">
           <%= link_to 'Rentals',rentals_path%>
-          <h3>Welcome, <%= @current_user.name%>!</h3>
+          <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+        </div>
           <% else %>
-          <%= link_to 'Home',root_path %>
-          <%= link_to 'Sign Up', new_user_path %>
-          <%= link_to 'Sign in', login_path %>
-          <%= link_to 'Bike Stands', bikestands_path %>
+          <div id="logoOuter">
+            <div id="logoInner">
+              <%= link_to 'Home',root_path %>
+            </div>
+          </div>
+          <div class="leftnav">
+            <%= link_to 'Sign in', login_path %>
+            <%= link_to 'Sign Up', new_user_path %>
+          </div>
+          <div class="rightnav">
+            <%= link_to 'Bike Stands', bikestands_path %>
+          </div>
           <% end %>
       </nav>
+
+
       <%= yield %>
+
+
+
       <footer>
         &copy; 2018 Gurdeep, Meena, Ricky, Winnie
       </footer>
+
+
     </div>
   </body>
 </html>

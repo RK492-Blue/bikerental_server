@@ -14,6 +14,7 @@
     <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
   <% else @current_user.present? %>
           <% if @current_user.present? && @current_user.user_type === 'admin' %>
+          <h3>Welcome, <%= @current_user.name%>!</h3>
           <h2>Ready to Go!!!!!</h2>
           <p>Just Ride! Nothing holds you back</p>
           <p>When you're on the road, it's always safety first </p>
@@ -22,6 +23,7 @@
           <div><%= link_to 'Profile', users_path %></div>
 
           <% elsif @current_user.present? && @current_user.user_type === 'user' %>
+          <h3>Welcome, <%= @current_user.name%>!</h3>
           <h2>Ready to Go!!!!!</h2>
           <p>Just Ride! Nothing holds you back</p>
           <p>When you're on the road, it's always safety first </p>

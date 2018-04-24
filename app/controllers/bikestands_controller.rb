@@ -4,7 +4,11 @@ class BikestandsController < ApplicationController
   # GET /bikestands
   # GET /bikestands.json
   def index
-    @bikestands = Bikestand.all
+    if params[:search].present?
+      @bikestands = Bikestand.near(params[:search], 50, :order => :distance)
+    else
+      @bikestands = Bikestand.all
+    end
   end
 
   # GET /bikestands/1

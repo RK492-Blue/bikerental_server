@@ -16,6 +16,12 @@
     <% @bikestands.each do |bikestand| %>
       <tr>
         <td><%= bikestand.location %></td>
+        <%= form_tag bikestands_path, :method => :get do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search Near", :name => nil %>
+    </p>
+<% end %>
         <td><%= bikestand.bikestand_long %></td>
         <td><%= bikestand.bikestand_lat %></td>
         <%if @current_user.present? && @current_user.user_type == 'admin'%>

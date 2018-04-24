@@ -7,6 +7,15 @@
   <%= @bikestand.location %>
 </p>
 
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bikestand.bikestand_lat}%2C#{@bikestand.bikestand_long}" %>
+
+<h3>Nearby Bikestands</h3>
+<ul>
+<% for bikestand in @bikestand.nearbys(10) %>
+ <li><%= link_to bikestand.location, bikestand %> (<%= bikestand.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
 <p>
   <strong>Bikestand long:</strong>
   <%= @bikestand.bikestand_long %>

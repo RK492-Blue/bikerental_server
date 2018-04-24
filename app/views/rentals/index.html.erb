@@ -83,7 +83,7 @@
         <th>End time</th>
         <th>Start station</th>
         <th>End station</th>
-        <th>Cost</th>
+        <!-- <th>Cost</th> -->
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -93,16 +93,14 @@
       <% @rental_user1.each do |rental| %>
         <tr>
           <td><%= rental.bike.bike_serial_num%></td>
+
+          <!-- <td><%# rental.start_time %></td> -->
           <%if rental.start_time.present? %>
-            <td> <%= rental.start_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
+            <td> <%= rental.start_time.strftime('%e %b %Y  %l:%M %P') %></td>
             <%else%>
             <td></td>
           <%end%>
-
-
-          <td><%= rental.start_time %></td>
-
-          <td><%= rental.end_time %></td>
+          <!-- <td><%#= rental.end_time %></td> -->
 
 
 
@@ -121,7 +119,10 @@
           <% end %>
           <!--*******************************************-->
 
-          <td><%= number_to_currency(rental.cost) %></td>
+          <!-- <td><%= number_to_currency(rental.cost) %></td> -->
+
+
+
 
           <td><%= link_to 'View Details', rental %></td>
             <%if !rental.end_stand.present? %>

@@ -10,22 +10,22 @@
 
 
 Bike.destroy_all
-b1 = Bike.create(:bike_serial_num => 'A1', :bikestand_id => 1, :available => true)
-b2 = Bike.create(:bike_serial_num => 'A2', :bikestand_id => 2, :available => true)
-b3 = Bike.create(:bike_serial_num => 'B2', :bikestand_id => 3, :available => true)
-b4 = Bike.create(:bike_serial_num => 'B1', :bikestand_id => 4, :available => true)
-b5 = Bike.create(:bike_serial_num => 'C1', :bikestand_id => 5, :available => true)
-b6 = Bike.create(:bike_serial_num => 'C2', :bikestand_id => 6, :available => true)
-b7 = Bike.create(:bike_serial_num => 'C3', :bikestand_id => 7, :available => true)
-b8 = Bike.create(:bike_serial_num => 'D1', :bikestand_id => 8, :available => true)
-b9 = Bike.create(:bike_serial_num => 'D2', :bikestand_id => 9, :available => true)
-b10 = Bike.create(:bike_serial_num => 'D3', :bikestand_id => 10, :available => true)
-b11 = Bike.create(:bike_serial_num => 'E1', :bikestand_id => 11, :available => true)
-b12 = Bike.create(:bike_serial_num => 'E2', :bikestand_id => 12, :available => true)
-b13 = Bike.create(:bike_serial_num => 'E3', :bikestand_id => 13, :available => true)
-b14 = Bike.create(:bike_serial_num => 'E4', :bikestand_id => 14, :available => true)
-b15 = Bike.create(:bike_serial_num => 'E5', :bikestand_id => 15, :available => true)
-b16 = Bike.create(:bike_serial_num => 'E6', :bikestand_id => 16, :available => true)
+b1 = Bike.create(:bike_serial_num => 'A1472', :bikestand_id => 1, :available => true)
+b2 = Bike.create(:bike_serial_num => 'A2235', :bikestand_id => 2, :available => true)
+b3 = Bike.create(:bike_serial_num => 'B2351', :bikestand_id => 3, :available => true)
+b4 = Bike.create(:bike_serial_num => 'B1236', :bikestand_id => 4, :available => true)
+b5 = Bike.create(:bike_serial_num => 'C1964', :bikestand_id => 5, :available => true)
+b6 = Bike.create(:bike_serial_num => 'C2551', :bikestand_id => 6, :available => true)
+b7 = Bike.create(:bike_serial_num => 'C3992', :bikestand_id => 7, :available => true)
+b8 = Bike.create(:bike_serial_num => 'D1134', :bikestand_id => 8, :available => true)
+b9 = Bike.create(:bike_serial_num => 'D2441', :bikestand_id => 9, :available => true)
+b10 = Bike.create(:bike_serial_num => 'D3902', :bikestand_id => 10, :available => true)
+b11 = Bike.create(:bike_serial_num => 'B1351', :bikestand_id => 11, :available => true)
+b12 = Bike.create(:bike_serial_num => 'A2288', :bikestand_id => 12, :available => true)
+b13 = Bike.create(:bike_serial_num => 'C3232', :bikestand_id => 13, :available => true)
+b14 = Bike.create(:bike_serial_num => 'A4167', :bikestand_id => 14, :available => true)
+b15 = Bike.create(:bike_serial_num => 'B5893', :bikestand_id => 15, :available => true)
+b16 = Bike.create(:bike_serial_num => 'D6593', :bikestand_id => 16, :available => true)
 
 
 Bikestand.destroy_all

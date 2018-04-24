@@ -15,34 +15,48 @@
 
 
       <nav>
-        <% if @current_user.present? %>
-        <div id="logoOuter">
-          <div id="logoInner">
-            <%= link_to 'Home',root_path %>
-          </div>
-        </div>
-        <div class="leftnav">
-          <%= link_to 'Bikes',bikes_path %>
-          <%= link_to 'Bike Stands', bikestands_path %>
-        </div>
-        <div class="rightnav">
-          <%= link_to 'Rentals',rentals_path%>
-          <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
-        </div>
-          <% else %>
+          <% if @current_user.present? %>
+
           <div id="logoOuter">
             <div id="logoInner">
-              <%= link_to 'Home',root_path %>
+              <%= link_to 'bShare',root_path %>
             </div>
           </div>
-          <div class="leftnav">
-            <%= link_to 'Sign in', login_path %>
-            <%= link_to 'Sign Up', new_user_path %>
-          </div>
-          <div class="rightnav">
-            <%= link_to 'Bike Stands', bikestands_path %>
-          </div>
-          <% end %>
+
+
+          <div class="navLinks">
+            <div class="leftnav">
+              <%= link_to 'Bikes',bikes_path %>
+              <%= link_to 'Bike Stands', bikestands_path %>
+            </div>
+            <div class="rightnav">
+              <%= link_to 'Rentals',rentals_path%>
+              <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+            </div>
+            </div>
+
+
+              <% else %>
+
+              <div id="logoOuter">
+                <div id="logoInner">
+                  <%= link_to 'bShare',root_path %>
+                </div>
+              </div>
+
+
+              <div class="navLinks">
+              <div class="leftnav">
+                <%= link_to 'Sign in', login_path %>
+                <%= link_to 'Sign Up', new_user_path %>
+              </div>
+              <div class="rightnav">
+                <%= link_to 'Bike Stands', bikestands_path %>
+              </div>
+            </div>
+
+
+            <% end %>
       </nav>
 
 

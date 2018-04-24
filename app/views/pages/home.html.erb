@@ -1,19 +1,19 @@
 <main>
   <% if @current_user.nil? %>
-    <!-- <h2>Ready to Go!!!!!</h2>
-    <h2>Just Ride! Nothing holds you back</h2>
-    <h3>When you're on the road, it's always safety first </h3> -->
+  <header id="hero">
+      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
+  </header>
     <h4>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h4>
   <% elsif @current_user.present? %>
-  <img src="http://www.fillmurray.com/1000/500" alt="main"/>
-    <!-- <h2>Ready to Go!!!!!</h2>
-    <p>Just Ride! Nothing holds you back</p>
-    <p>When you're on the road, it's always safety first </p> -->
+  <header id="hero">
+      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
+  </header>
     <div><%= link_to 'Hire Bike', new_rental_path %></div>
     <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>
     <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
   <% else @current_user.present? %>
           <% if @current_user.present? && @current_user.user_type === 'admin' %>
+          <h3>Welcome, <%= @current_user.name%>!</h3>
           <h2>Ready to Go!!!!!</h2>
           <p>Just Ride! Nothing holds you back</p>
           <p>When you're on the road, it's always safety first </p>
@@ -22,6 +22,7 @@
           <div><%= link_to 'Profile', users_path %></div>
 
           <% elsif @current_user.present? && @current_user.user_type === 'user' %>
+          <h3>Welcome, <%= @current_user.name%>!</h3>
           <h2>Ready to Go!!!!!</h2>
           <p>Just Ride! Nothing holds you back</p>
           <p>When you're on the road, it's always safety first </p>

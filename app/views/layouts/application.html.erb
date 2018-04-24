@@ -12,27 +12,63 @@
 
   <body>
     <div id="bodywrapper">
+
+
       <nav>
-        <% if @current_user.present? %>
-          <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
-          <%= link_to 'Home',root_path %>
-          <%= link_to 'Bikes',bikes_path %>
-          <%= link_to 'Bike Stands', bikestands_path %>
-          <%= link_to 'Rentals',rentals_path%>
-          <h3>Welcome, <%= @current_user.name%>!</h3>
-          <% else %>
-          <%= link_to 'Home',root_path %>
-          <%= link_to 'Sign Up', new_user_path %>
-          <%= link_to 'Sign in', login_path %>
-          <%= link_to 'Bike Stands', bikestands_path %>
-          <% end %>
+          <% if @current_user.present? %>
+
+          <div id="logoOuter">
+            <div id="logoInner">
+              <%= link_to 'bShare',root_path %>
+            </div>
+          </div>
+
+
+          <div class="navLinks">
+            <div class="leftnav">
+              <%= link_to 'Bikes',bikes_path %>
+              <%= link_to 'Bike Stands', bikestands_path %>
+            </div>
+            <div class="rightnav">
+              <%= link_to 'Rentals',rentals_path%>
+              <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+            </div>
+            </div>
+
+
+              <% else %>
+
+              <div id="logoOuter">
+                <div id="logoInner">
+                  <%= link_to 'bShare',root_path %>
+                </div>
+              </div>
+
+
+              <div class="navLinks">
+              <div class="leftnav">
+                <%= link_to 'Sign in', login_path %>
+                <%= link_to 'Sign Up', new_user_path %>
+              </div>
+              <div class="rightnav">
+                <%= link_to 'Bike Stands', bikestands_path %>
+              </div>
+            </div>
+
+
+            <% end %>
       </nav>
 
+
       <%= yield %>
+
+
+
       <footer>
         &copy; 2018 Gurdeep, Meena, Ricky, Winnie
       </footer>
-    </div>
 
+
+    </div>
   </body>
 </html>

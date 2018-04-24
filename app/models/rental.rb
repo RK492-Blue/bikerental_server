@@ -29,4 +29,7 @@ class Rental < ApplicationRecord
       ((Time.now - start_time) / 3600.0).ceil # Hours
     end
   end
+  
+  geocoded_by :location
+  after_validation :geocode
 end

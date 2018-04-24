@@ -15,5 +15,5 @@ class Bikestand < ApplicationRecord
   has_many :rentals
 
   geocoded_by :location
-  after_validation :geocode, :if => :location_changed?
+  after_validation :geocode
 end

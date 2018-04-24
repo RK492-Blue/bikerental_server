@@ -49,7 +49,7 @@ class RentalsController < ApplicationController
   def update
     respond_to do |format|
       if @rental.update(rental_params)
-        format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
+        format.html { redirect_to rental_pay_path(@rental), notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else
         format.html { render :edit }
@@ -66,6 +66,9 @@ class RentalsController < ApplicationController
       format.html { redirect_to rentals_url, notice: 'Rental was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def pay
   end
 
   private

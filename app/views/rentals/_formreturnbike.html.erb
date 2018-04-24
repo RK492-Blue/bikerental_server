@@ -38,7 +38,7 @@
 
 <p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>
 
-<!-- <form action="/charge" method="POST">
+<form action="/charge" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
@@ -48,4 +48,4 @@
     data-description="2 widgets ($20.00)"
     data-amount="2000">
   </script>
-</form> -->
+</form>

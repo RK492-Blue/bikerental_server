@@ -59,6 +59,9 @@ Rails.application.routes.draw do
   post '/login' =>'session#create'
   delete '/login' => 'session#destroy'
 
+  get '/rentals/:id/pay' => 'rentals#pay', :as => :rental_pay
+
+
   get '/rental_user' =>'rentals#rental_user'
 
   resources :rentals

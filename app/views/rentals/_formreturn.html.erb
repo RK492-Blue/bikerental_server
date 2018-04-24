@@ -18,7 +18,7 @@
 
         <div class="field">
           <%= formreturn.label :end_time%>
-          <%= formreturn.datetime_select :end_time, id: :rental_end_time %> <%# TODO: add a Time.now option %>
+          <%= formreturn.text_field :end_time, id: :rental_end_time %>
         </div>
 
 
@@ -30,7 +30,7 @@
 
         <div class="field">
           <%= formreturn.label :cost %>
-          <%= formreturn.text_field :cost, id: :rental_cost %> <%# TODO: Calculate cost based on duration.  %>
+          <%= formreturn.text_field :cost, id: :rental_cost %> 
         </div>
 
 

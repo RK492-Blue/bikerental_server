@@ -4,12 +4,10 @@ class RentalsController < ApplicationController
   # GET /rentals
   # GET /rentals.json
   def index
-
     @rentals = Rental.all
     if @current_user.present?
-        @rental_user = Rental.where(:user_id => @current_user.id)
+      @rental_user1 = Rental.where(:user_id => @current_user.id)
     end
-
   end
 
   def rental_user
@@ -37,8 +35,6 @@ class RentalsController < ApplicationController
 
     respond_to do |format|
       if @rental.save
-        Bike.where(:id => @rental.bike_id).update(available: false)
-
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
         format.json { render :show, status: :created, location: @rental }
       else
@@ -53,8 +49,6 @@ class RentalsController < ApplicationController
   def update
     respond_to do |format|
       if @rental.update(rental_params)
-        Bike.where(:id => @rental.bike_id).update(available: true,:bikestand_id =>@rental.end_stand_id)
-
         format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else

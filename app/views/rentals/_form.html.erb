@@ -39,8 +39,8 @@
 
         <div class="field">
           <%= form.label :start_time %>
-          <%= form.datetime_select :start_time, id: :rental_start_time %>
-        </div> <%# TODO: add a Time.now option %>
+          <%= form.text_field :start_time, id: :rental_start_time %>
+        </div>
 
         <div class="actions">
           <%= form.submit "Hire a Bike"%>

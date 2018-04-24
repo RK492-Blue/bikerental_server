@@ -48,6 +48,17 @@
 
         <!--*******************************************-->
         <td><%= rental.start_stand.location %></td>
+
+        <%if rental.end_stand_id.present?%>
+        <td><%= rental.end_stand.location %></td>
+        <%else %>
+        <td></td>
+        <% end %>
+
+        <td><%= rental.cost %></td>
+        <td><%= link_to 'Show', rental %></td>
+        <td><%= link_to 'Return', edit_rental_path(rental) %></td>
+
           <%if rental.end_stand_id.present?%>
             <td><%= rental.end_stand.location %></td>
           <%else %>
@@ -56,6 +67,8 @@
         <!--*******************************************-->
         <td><%= number_to_currency(rental.cost) %></td>
         <td><%= link_to 'View Details', rental %></td>
+        <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>
+
         <td><%= link_to 'Edit Rental', edit_rental_path(rental) %></td>
         <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -77,7 +90,7 @@
 
     <tbody>
 
-      <% @rental_user.each do |rental| %>
+      <% @rental_user1.each do |rental| %>
         <tr>
           <td><%= rental.bike.bike_serial_num%></td>
           <%if rental.start_time.present? %>
@@ -86,12 +99,20 @@
             <td></td>
           <%end%>
 
+
+          <td><%= rental.start_time %></td>
+
+          <td><%= rental.end_time %></td>
+
+
+
           <%if rental.end_time.present? %>
             <td> <%= rental.end_time.strftime('%e %b %Y  %l:%M %P') %>  </td>
             <%else%>
             <td></td>
           <%end%>
           <!--*******************************************-->
+
           <td><%= rental.start_stand.location %></td>
           <% if rental.end_stand_id.present? %>
           <td><%= rental.end_stand.location %></td>

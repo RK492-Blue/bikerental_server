@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery.datetimepicker.full.js
 //= require_tree .

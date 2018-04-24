@@ -7,6 +7,9 @@ $primary-yellow: #e1b200;
 $primary-grey: #aba597;
 $primary-blue: #4b85a8;
 $primary-darkblue: #182139;
+$bg-lightyellow: #eee66e;
+$main-drkyellow: #e1b300;
+$main-medyellow: #f5d353;
 
 * {
   box-sizing: border-box;
@@ -25,8 +28,23 @@ nav {
   margin: 0 auto;
   padding: 2em;
   background-color: $primary-blue;
-  a {
-    color: white;
+  #logoOuter {
+    background-color:$main-drkyellow;
+    width: 260px;
+	  height: 120px;
+	  border-radius: 118px / 65px;
+    position: relative;
+    top: -4em;
+    left: 6em;
+    #logoInner {
+      background-color: $main-medyellow;
+      width: 240px;
+      height: 110px;
+      border-radius: 118px / 57px;
+      position: absolute;
+      top: 0em;
+      left: .5em;
+    }
   }
 }
 
@@ -34,9 +52,7 @@ nav {
   margin: 0 auto;
   padding: 0;
   height: 100%;
-  background-image: linear-gradient(90deg, #8fc7ea 33.33%, white 33.33%, white 66.66%, #fff47a 66.66%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-color: $bg-lightyellow;
   text-align: center;
   vertical-align: baseline;
   main {

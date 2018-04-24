@@ -5,7 +5,11 @@
 <% elsif @current_user.present?%>
 <p id="notice"><%= notice %></p>
 
-<h1>Rentals</h1>
+<%if @current_user.user_type === 'admin' %>
+  <h1>Rentals</h1>
+  <%else%>
+  <h1>Your Rental History</h1>
+  <%end%>
 
 <table>
   <thead>

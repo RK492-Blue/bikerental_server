@@ -10,7 +10,7 @@ $(document).ready(function () {
     {
  minDate:'-1970/01/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
  maxDate:'+1970/01/07',//tomorrow is maximum date calendar
- minTime:0
+ minTime:0// time starts from now
 }
   )
 });

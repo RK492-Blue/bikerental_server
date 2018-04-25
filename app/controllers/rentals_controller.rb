@@ -27,6 +27,7 @@ class RentalsController < ApplicationController
 
   # GET /rentals/1/edit
   def edit
+    @bikestands = Bikestand.all
   end
 
   # POST /rentals

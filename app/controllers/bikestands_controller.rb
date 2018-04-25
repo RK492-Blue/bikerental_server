@@ -19,6 +19,7 @@ class BikestandsController < ApplicationController
 
   # GET /bikestands/1/edit
   def edit
+    
   end
 
   # POST /bikestands

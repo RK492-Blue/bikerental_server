@@ -7,7 +7,9 @@
     <tr>
       <th>Serial Number</th>
       <th>Bike Stand</th>
-
+      <!-- added -->
+      <th>Available</th>
+      <!-- added -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +24,9 @@
         <%end%>
 
         <!-- <td><%= bike.bikestand_id %></td> -->
-
-
+        <!-- added -->
+        <td><%= bike.available %></td>
+        <!-- added -->
 
         <%if @current_user.present? && @current_user.user_type == 'admin'%>
 

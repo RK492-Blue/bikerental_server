@@ -1,0 +1,60 @@
+
+$bg-lightyellow: #eee66e;
+$main-drkyellow: #e1b300;
+$main-medyellow: #f5d353;
+$main-blue: #4b85ab;
+$main-drkblue: #2a2e6e;
+$main-orange: #d98200;
+$drkblue01: #293b7d;
+$drkblue02: #424b73;
+$drkblue03: #2a2e6e;
+
+// #8fc6ed
+// #050f2b
+//
+// #807d76
+//
+// #364fa3
+// #4666b1
+// #c5e4f9
+
+
+main {
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  h1 {
+    font-size: 3em;
+    color: $drkblue01;
+  }
+  .button {
+    display: inline-block;
+    margin: 0em 4em 2em 4em;
+    padding: 1em;
+    background-color: $main-drkyellow;
+    border-radius: 5em;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .steps {
+    height: 990px; //need to fix for responsiveness
+    .step01 {
+      position: relative;
+      top: 2em;
+      left: -20em;
+    }
+    .step02 {
+    position: relative;
+    top: -5em;
+    left: 0em;
+    }
+    .step03 {
+      position: relative;
+      top: -60em;
+      left: 20em;
+    }
+
+  }
+}

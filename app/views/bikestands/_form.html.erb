@@ -15,17 +15,19 @@
 
     <div class="field">
       <%= form.label :location %>
-      <%= form.text_area :location, id: :bikestand_location %>
+      <%= form.text_area :location, id: :bikestand_location, :required =>true %>
     </div>
 
     <div class="field">
-      <%= form.label :bikestand_long %>
-      <%= form.text_area :bikestand_long, id: :bikestand_bikestand_long %>
+      <%= form.label :longitude %>
+      <%= form.text_area :longitude, id: :longitude, :required =>true %>
+
     </div>
 
     <div class="field">
-      <%= form.label :bikestand_lat %>
-      <%= form.text_area :bikestand_lat, id: :bikestand_bikestand_lat %>
+      <%= form.label :latitude %>
+      <%= form.text_area :latitude, id: :latitude, :required =>true %>
+
     </div>
 
     <div class="actions">

@@ -4,7 +4,7 @@ class BikestandsController < ApplicationController
   # GET /bikestands
   # GET /bikestands.json
   def index
-    @bikestands = Bikestand.all
+      @bikestands = Bikestand.all  
   end
 
   # GET /bikestands/1

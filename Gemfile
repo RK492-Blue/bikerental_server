@@ -34,6 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'jquery-rails'
+gem 'geocoder'
 
 
 group :development, :test do

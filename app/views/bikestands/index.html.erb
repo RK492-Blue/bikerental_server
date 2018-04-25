@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bikestands</h1>
-
 <table>
   <thead>
     <tr>
@@ -16,6 +15,7 @@
     <% @bikestands.each do |bikestand| %>
       <tr>
         <td><%= bikestand.location %></td>
+
         <td><%= bikestand.bikestand_long %></td>
         <td><%= bikestand.bikestand_lat %></td>
         <%if @current_user.present? && @current_user.user_type == 'admin'%>
@@ -29,6 +29,39 @@
     <% end %>
   </tbody>
 </table>
+<%= content_tag :div, id: "map", data: {location: @bikestands} do %>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=initMap">
+</script>
+
+<script>
+let bikestand = {lat: -33.87, lng: 151.20}
+let map;
+let ipAddress = '<%=  request.remote_ip %>'
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: bikestand.lat, lng: bikestand.lng},
+    zoom: 15
+  });
+  console.log($('#map').data('location') )
+  let locationList = $('#map').data('location')
+  for (var i = 0; i < locationList.length; i++) {
+    console.log( locationList[i] )
+    marker = new google.maps.Marker ({
+     position: {lat: +locationList[i].bikestand_lat, lng: +locationList[i].bikestand_long},
+     map: map,
+     label: locationList[i].location
+    })
+  }
+}
+navigator.geolocation.getCurrentPosition( function(results) {
+  console.log(results.coords.latitude, results.coords.longitude)
+  bikestand = {lat: results.coords.latitude, lng: results.coords.longitude}
+ // initMap()
+})
+</script>
+
+<% end %>
+
 
 <br>
 

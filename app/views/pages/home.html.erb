@@ -1,12 +1,12 @@
 <main>
   <% if @current_user.nil? %>
   <header id="hero">
-      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
+        <%= image_tag("bshare_header.png", :alt => "bshare header") %>
   </header>
     <h4>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h4>
   <% elsif @current_user.present? %>
   <header id="hero">
-      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
+      <%= image_tag("bshare_header.png", :alt => "bshare header") %>
   </header>
     <div><%= link_to 'Hire Bike', new_rental_path %></div>
     <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>

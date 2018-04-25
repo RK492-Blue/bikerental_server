@@ -27,6 +27,7 @@
           <div class="navInner">
             <div class="barLinks">
               <div class="barLeft">
+                <%= link_to 'Profile', users_path %>
                 <%= link_to 'Bikes',bikes_path %>
                 <%= link_to 'Bike Stands', bikestands_path %>
               </div>
@@ -40,6 +41,7 @@
             <div class="burgerLinks">
               <%= image_tag("burgerIcon.svg", :alt => "menu") %>
               <div class="ham">
+                <%= link_to 'Profile', users_path %>
                 <%= link_to 'Bikes',bikes_path %>
                 <%= link_to 'Bike Stands', bikestands_path %>
                 <%= link_to 'Rentals',rentals_path%>
@@ -84,7 +86,6 @@
 
 
       <%= yield %>
-
 
 </div>
       <footer>

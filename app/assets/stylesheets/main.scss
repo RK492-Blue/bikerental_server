@@ -2,15 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Color Palette #2378
-$primary-orange: #d98100;
-$primary-yellow: #e1b200;
-$primary-grey: #aba597;
-$primary-blue: #4b85a8;
 $primary-darkblue: #182139;
 $bg-lightyellow: #eee66e;
 $main-drkyellow: #e1b300;
 $main-medyellow: #f5d353;
 $main-blue: #4b85ab;
+$main-drkblue: #2a2e6e;
 
 * {
   box-sizing: border-box;
@@ -55,7 +52,9 @@ nav {
       .barLinks {
 
         a {
+          color: $main-blue;
           text-decoration: none;
+
         .barLeft {
           display: inline-block;
         }
@@ -72,25 +71,13 @@ nav {
   padding: 0;
   vertical-align: baseline;
 
-  main {
-    display: inline-block;
-    #hero {
-
-    }
-
-  }
-  aside {
-    margin: 0 auto;
-  }
-
-
 }
 
 
 
-footer {
+footer { //TODO: doesn't stick to bottom on rentals page.
   background-color: $bg-lightyellow;
-  color: $main-blue;
+  color: $main-drkblue;
   padding: 0;
   width: 100%;
   .footOuter {
@@ -116,6 +103,9 @@ footer {
     }
   }
 }
+
+
+///////////// MEDIA QUERIES ///////////////////
 
 /// Big Screen
 @media (min-width: 900px){
@@ -150,14 +140,18 @@ footer {
       .barLeft {
         position: relative;
         top: 4.5em;
-        left: 10vh;
-
+        left: 2vh;
+        a {
+          padding: 1em;
+        }
       }
       .barRight {
         position: relative;
         top: 3.5em;
-        left: 115vh;
-
+        left: 110vh;
+        a {
+          padding: 1em;
+        }
       }
     }
     .burgerLinks {
@@ -170,7 +164,7 @@ footer {
 }
 
 // Medium Tablet
-@media (min-width: 480px){
+@media (max-width: 900px){
   #logoOuter {
     width: 520px;
     height: 240px;
@@ -199,6 +193,22 @@ footer {
     .barLinks {
       display: inline-block;
       padding: 8.5px;
+      .barLeft {
+        position: relative;
+        top: 4.5em;
+        left: 1vh;
+        a {
+          padding: 1em;
+        }
+      }
+      .barRight {
+        position: relative;
+        top: 3.5em;
+        left: 95vh;
+        a {
+          padding: 1em;
+        }
+      }
     }
     .burgerLinks {
       display: none;

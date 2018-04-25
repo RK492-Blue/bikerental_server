@@ -32,7 +32,7 @@ class RentalsController < ApplicationController
   # POST /rentals
   # POST /rentals.json
   def create
-    raise
+    #raise
     @rental = Rental.new(rental_params)
 
     respond_to do |format|

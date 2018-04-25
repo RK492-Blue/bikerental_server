@@ -17,18 +17,25 @@
 
           <div class="field">
             <%= form.label :bike_serial_num %>
-            <%= form.text_field :bike_serial_num, id: :bike_bike_serial_num %>
+            <%= form.text_field :bike_serial_num, id: :bike_bike_serial_num,:required =>true %>
           </div>
 
 
           <div class="field">
             <%= form.label :bikestand_id %>
-            <%= form.number_field :bikestand_id, id: :bike_bikestand_id %>
+            <%= form.number_field :bikestand_id, id: :bike_bikestand_id,:required =>true%>
           </div>
 
-          <div class="field">
+          
+          <!-- <div class="field">
             <%= form.label :available %>
             <%= form.text_field :available, id: :bike_available %>
+          </div> -->
+
+
+          <div class="field">
+
+            <%= form.hidden_field(:available, {:value =>'t'}) %>
           </div>
 
           <div class="actions">

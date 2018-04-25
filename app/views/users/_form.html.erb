@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_area :name, id: :user_name %>
+    <%= form.text_area :name, id: :user_name, :required =>true %>
   </div>
 
   <!-- <div class="field">
@@ -23,23 +23,23 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.email_field :email, id: :user_email %>
+    <%= form.email_field :email, id: :user_email, :required =>true %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password, id: :user_password %>
+    <%= form.password_field :password, id: :user_password, :required =>true %>
   </div>
 
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, id: :user_password %>
+    <%= form.password_field :password_confirmation, id: :user_password, :required =>true %>
   </div>
 
   <%= form.hidden_field(:user_type, {:value => 'user'}) %>
 
 
   <div class="actions">
-    <%= form.submit "Confirm Changes"%>
+    <%= form.submit%>
   </div>
 <% end %>

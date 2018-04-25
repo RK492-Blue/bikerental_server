@@ -4,7 +4,7 @@ class BikestandsController < ApplicationController
   # GET /bikestands
   # GET /bikestands.json
   def index
-      @bikestands = Bikestand.all  
+      @bikestands = Bikestand.all
   end
 
   # GET /bikestands/1
@@ -69,6 +69,6 @@ class BikestandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bikestand_params
-      params.require(:bikestand).permit(:location, :bikestand_long, :bikestand_lat)
+      params.require(:bikestand).permit(:location, :longitude,:latitude)
     end
 end

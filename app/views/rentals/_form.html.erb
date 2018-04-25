@@ -19,15 +19,17 @@
 
         <div class="field">
           <%= form.label :start_stand_id %>
-          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), :include_blank => true %>
+          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->' }, :required => true%>
+
         </div>
+
 
         <div class="field">
         <p>Bikes available on this stand</p>
           <% Bikestand.all.each do |stand| %>
             <%= select_tag "rental[bike_id]",
                 options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),
-                :id => "bikestand_#{stand.id}", :class => 'bikes' %>
+                :id => "bikestand_#{stand.id}", :class => 'bikes', :required =>true %>
           <% end %>
         </div>
 
@@ -37,7 +39,7 @@
 
         <div class="field">
           <%= form.label :start_time %>
-          <%= form.text_field :start_time, id: :rental_start_time %>
+          <%= form.text_field :start_time, id: :rental_start_time, :required =>true %>
         </div>
 
         <div class="actions">
@@ -47,7 +49,7 @@
 
         <% end %>
 <% end %>
-
+<!--  *********************************************** -->
 <%= content_tag :div, id: "map", data: {location: @bikestands} do %>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=mapLocation">
 </script>
@@ -61,8 +63,6 @@ let map;
 function mapLocation(locationID) {
   if (locationID) { debugger; }
   console.log('maplocation', locationID);
-  // debugger;
-
   let locationList = $('#map').data('location')
 
   // If we have a locationID, make that the new center of the map.
@@ -75,17 +75,17 @@ function mapLocation(locationID) {
         break;
       }
     }
-    bikestand.lat = +selectedStand.bikestand_lat;
-    bikestand.lng = +selectedStand.bikestand_long;
+    bikestand.lat = +selectedStand.latitude;
+    bikestand.lng = +selectedStand.longitude;
   }
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: bikestand.lat, lng: bikestand.lng},
-    zoom: 15
+    zoom: 7
   });
   console.log($('#map').data('location') )
   if (selectedStand) {
     marker = new google.maps.Marker ({
-     position: {lat: +selectedStand.bikestand_lat, lng: +selectedStand.bikestand_long},
+     position: {lat: +selectedStand.latitude, lng: +selectedStand.longitude},
      map: map,
      label: selectedStand.location
    });
@@ -94,7 +94,7 @@ function mapLocation(locationID) {
     for (var i = 0; i < locationList.length; i++) {
       console.log( locationList[i] );
       marker = new google.maps.Marker ({
-       position: {lat: +locationList[i].bikestand_lat, lng: +locationList[i].bikestand_long},
+       position: {lat: +locationList[i].latitude, lng: +locationList[i].longitude},
        map: map,
        label: locationList[i].location
       })
@@ -107,9 +107,10 @@ $('[name="rental[start_stand_id]"]').on('change', function () {
 });
 navigator.geolocation.getCurrentPosition( function(results) {
   console.log(results.coords.latitude, results.coords.longitude)
-  bikestand = {lat: results.coords.latitude, lng: results.coords.longitude}
- mapLocation()
+  bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
+  mapLocation()
 })
 </script>
 
 <% end %>
+<!--  *********************************************** -->

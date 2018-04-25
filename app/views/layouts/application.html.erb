@@ -24,17 +24,31 @@
           </div>
 
 
-          <div class="navLinks">
-            <div class="leftnav">
-              <%= link_to 'Bikes',bikes_path %>
-              <%= link_to 'Bike Stands', bikestands_path %>
-            </div>
-            <div class="rightnav">
-              <%= link_to 'Rentals',rentals_path%>
-              <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
-            </div>
+          <div class="navInner">
+            <div class="barLinks">
+              <div class="barLeft">
+                <%= link_to 'Profile', users_path %>
+                <%= link_to 'Bikes',bikes_path %>
+                <%= link_to 'Bike Stands', bikestands_path %>
+              </div>
+              <div class="barRight">
+                <%= link_to 'Rentals',rentals_path%>
+                <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+              </div>
             </div>
 
+
+            <div class="burgerLinks">
+              <%= image_tag("burgerIcon.svg", :alt => "menu") %>
+              <div class="ham">
+                <%= link_to 'Profile', users_path %>
+                <%= link_to 'Bikes',bikes_path %>
+                <%= link_to 'Bike Stands', bikestands_path %>
+                <%= link_to 'Rentals',rentals_path%>
+                <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete'%>
+              </div>
+            </div>
+          </div>
 
               <% else %>
 
@@ -45,13 +59,24 @@
               </div>
 
 
-              <div class="navLinks">
-              <div class="leftnav">
+              <div class="navInner">
+                <div class="barLinks">
+                  <div class="barLeft">
+                    <%= link_to 'Sign in', login_path %>
+                    <%= link_to 'Sign Up', new_user_path %>
+                  </div>
+                  <div class="barRight">
+                    <%= link_to 'Bike Stands', bikestands_path %>
+                  </div>
+                </div>
+
+              <div class="burgerLinks">
+                <%= image_tag("burgerIcon.svg", :alt => "menu") %>
+                <div class="ham">
                 <%= link_to 'Sign in', login_path %>
                 <%= link_to 'Sign Up', new_user_path %>
-              </div>
-              <div class="rightnav">
                 <%= link_to 'Bike Stands', bikestands_path %>
+                </div>
               </div>
             </div>
 
@@ -62,13 +87,21 @@
 
       <%= yield %>
 
-
-
+</div>
       <footer>
-        &copy; 2018 Gurdeep, Meena, Ricky, Winnie
+        <div class="footOuter">
+
+          <div class="footInner">
+              <p>About Us</p>
+              <p>FAQ</p>
+              <p>Payments</p>
+              <p>&copy; 2018 Gurdeep, Meena, Ricky, Winnie</p>
+          </div>
+        </div>
+
       </footer>
 
 
-    </div>
+
   </body>
 </html>

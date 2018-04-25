@@ -1,50 +1,35 @@
-<main>
+  <header id="hero">
+        <%= image_tag("bshare_header.png", :alt => "bshare header") %>
+  </header>
+  <main>
   <% if @current_user.nil? %>
-  <header id="hero">
-      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
-  </header>
     <h4>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h4>
-  <% elsif @current_user.present? %>
-  <header id="hero">
-      <img src="http://www.fillmurray.com/1000/500" alt="main"/>
-  </header>
-    <div><%= link_to 'Hire Bike', new_rental_path %></div>
-    <div><%# link_to 'Profile', user_path %></div> <%# TODO: FIX THISSS. NOT WORKING %>
-    <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
   <% else @current_user.present? %>
           <% if @current_user.present? && @current_user.user_type === 'admin' %>
           <h3>Welcome, <%= @current_user.name%>!</h3>
-          <h2>Ready to Go!!!!!</h2>
-          <p>Just Ride! Nothing holds you back</p>
-          <p>When you're on the road, it's always safety first </p>
-          <div><%= link_to 'Hire Bike', new_rental_path %></div>
-          <div><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
-          <div><%= link_to 'Profile', users_path %></div>
+          <div class="button"><%= link_to 'Hire Bike', new_rental_path %></div>
+          <div class="button"><%= link_to 'Rental History', rentals_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
 
           <% elsif @current_user.present? && @current_user.user_type === 'user' %>
-          <h3>Welcome, <%= @current_user.name%>!</h3>
-          <h2>Ready to Go!!!!!</h2>
-          <p>Just Ride! Nothing holds you back</p>
-          <p>When you're on the road, it's always safety first </p>
-          <div><%= link_to 'Hire Bike', new_rental_path %></div>
-          <div><%= link_to 'Rental History', rental_user_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
-          <div><%= link_to 'Profile',users_path %></div>
+          <h1>Welcome, <%= @current_user.name%>!</h1>
+          <div class="button"><%= link_to 'Hire Bike', new_rental_path %></div>
+          <div class="button"><%= link_to 'Rental History', rental_user_path %></div> <%# TODO: Fix this so users can only see their own rental history, not everyone else's %>
          <% end %>
 
   <% end %>
-</main>
 
-<aside>
-  <div class="step01">
-    <h3>Step 1</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="steps">
+    <div class="step01">
+      <%= image_tag("step01_bg.png", :alt => "Step 1, find a bike stand close to you from our app") %>
+    </div>
+    <div class="step02">
+    <%= image_tag("step02_bg.png", :alt => "Step 2, rent a bike by choosing it from our app. Take it anywhere.") %>
+
+    </div>
+    <div class="step03">
+      <%= image_tag("step03_bg.png", :alt => "Step 2, return bike to closest bike stand when you're done.") %>
+
+    </div>
   </div>
-  <div class="step02">
-    <h3>Step 2</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-  <div class="step03">
-    <h3>Step 3</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-</aside>
+
+</main>

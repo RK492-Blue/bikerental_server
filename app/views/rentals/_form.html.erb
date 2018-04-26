@@ -59,7 +59,7 @@ let bikestand = {lat: -33.87, lng: 151.20}
 let map;
 // let ipAddress = '<%=  request.remote_ip %>'
 function mapLocation(locationID) {
-<<<<<<< HEAD
+
   if (locationID)
   console.log('maplocation', locationID);
   let locationList = $('#map').data('location')
@@ -81,7 +81,7 @@ function mapLocation(locationID) {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: bikestand.lat, lng: bikestand.lng},
     zoom: 7
-=======
+
  if (locationID)
  console.log('maplocation', locationID);
  let locationList = $('#map').data('location')
@@ -110,7 +110,7 @@ function mapLocation(locationID) {
     position: {lat: +selectedStand.latitude, lng: +selectedStand.longitude},
     map: map,
     label: selectedStand.location
->>>>>>> 2e007cc41023ec16eea3f17249ead5c79f2adb2f
+
   });
   console.log(marker)
  } else {
@@ -128,19 +128,18 @@ $('[name="rental[start_stand_id]"]').on('change', function () {
  const id = $(this).val();
  mapLocation( id )
 });
-<<<<<<< HEAD
+
 // navigator.geolocation.getCurrentPosition( function(results) {
 //   console.log(results.coords.latitude, results.coords.longitude)
 //   bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
 //   mapLocation()
 // })
-=======
+
 navigator.geolocation.getCurrentPosition( function(results) {
  console.log(results.coords.latitude, results.coords.longitude)
  bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
  mapLocation()
 })
->>>>>>> 2e007cc41023ec16eea3f17249ead5c79f2adb2f
 </script>
 
 <% end %>

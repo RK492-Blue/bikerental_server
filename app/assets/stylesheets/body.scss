@@ -26,11 +26,6 @@ main {
   font-size: 3em;
   color: $drkblue01;
   }
-  table {
-    margin: 5em 2em 2em 3em;
-    position: relative;
-    left: 50vh;
-  }
 
   .push {
     @include push_footer;

@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Bikes</h1>
@@ -22,7 +23,17 @@
         <% if bike.bikestand.present? %>
           <td><%= bike.bikestand.location %></td>
         <%end%>
-        <td><%= bike.available %></td>
+
+        <!-- <td><%= bike.bikestand_id %></td> -->
+        <!-- added -->
+        <% if bike.available %>
+        <td>Yes</td>
+        <% else %>
+        <td>No</td>
+        <% end %>
+
+        <!-- added -->
+
         <%if @current_user.present? && @current_user.user_type == 'admin'%>
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>

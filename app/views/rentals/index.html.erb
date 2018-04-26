@@ -114,9 +114,6 @@
 
           <!-- <td><%= number_to_currency(rental.cost) %></td> -->
 
-
-
-
           <td><%= link_to 'View Details', rental %></td>
             <%if !rental.end_stand.present? %>
               <td><%= link_to 'Return Bike', edit_rental_path(rental) %></td>

@@ -35,8 +35,6 @@
         <!-- added -->
 
         <%if @current_user.present? && @current_user.user_type == 'admin'%>
-
-
         <td><%= link_to 'Show', bike %></td>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>

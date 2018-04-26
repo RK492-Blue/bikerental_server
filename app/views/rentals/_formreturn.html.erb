@@ -19,20 +19,10 @@
           <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->'},:required =>true%>
         </div>
 
-
-        <!-- <div class="field">
-          <%= formreturn.label :cost %>
-          <%= formreturn.text_field :cost, id: :rental_cost %>
-        </div> -->
-
-
         <div class="field">
           <%= formreturn.label :end_time%>
           <%= formreturn.text_field :end_time, id: :rental_end_time,:required =>true %>
         </div>
-
-
-
 
       <!-- <div class="field">
           <%= formreturn.label :cost %>

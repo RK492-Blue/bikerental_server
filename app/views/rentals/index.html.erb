@@ -1,6 +1,6 @@
 <%if @current_user.nil?%>
 
-<h2>Please Sign in.</h2>
+<h2>Please <%= link_to 'Sign in', login_path %></h2>
 
 <% elsif @current_user.present?%>
 <p id="notice"><%= notice %></p>

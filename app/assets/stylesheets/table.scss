@@ -29,7 +29,7 @@ $main-grey: #807d76;
 
 table {
   width: 100%;
-  background-color: #fff;
+  background-color: $drkblue05;
 }
 
 th, td {
@@ -61,8 +61,8 @@ th, td {
 .table100 {
   border-radius: 16px;
   overflow: hidden;
-  background: $main-blue;
-  background: linear-gradient(-68deg, $drkblue01 , $drkblue03);
+  background: $lightblue03;
+  background: linear-gradient(-68deg, $lightblue01 , $lightblue02);
 }
 
 .table100 table {
@@ -72,14 +72,14 @@ th, td {
 .table100 td {
   //font-family: Montserrat-Regular;
   font-size: 14px;
-  color: #fff;
+  color: $drkblue05;
   line-height: 1.4;
 }
 
 .table100 th {
   //font-family: Montserrat-Medium;
   font-size: 12px;
-  color: #fff;
+  color: $drkblue03;
   line-height: 1.4;
   text-transform: uppercase;
 
@@ -90,7 +90,7 @@ th, td {
   background-color: rgba(255,255,255,0.1);
 }
 
-.table100 .hov-column-ver6 {
+.table100 .hov-column {
   background-color: rgba(255,255,255,0.1);
 }
 

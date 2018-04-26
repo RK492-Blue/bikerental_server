@@ -77,6 +77,7 @@ class RentalsController < ApplicationController
   def pay
     #raise
     @current_rental = Rental.find_by :id => params[:id]
+    
 
   end
 

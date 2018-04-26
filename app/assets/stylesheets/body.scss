@@ -1,0 +1,38 @@
+// STYLE FOR OTHER PAGES
+
+// Color Palette #2378
+$primary-darkblue: #182139;
+$bg-lightyellow: #eee66e;
+$main-drkyellow: #e1b300;
+$main-medyellow: #f5d353;
+$main-blue: #4b85ab;
+$main-drkblue: #2a2e6e;
+$main-orange: #d98200;
+$drkblue01: #293b7d;
+$drkblue02: #424b73;
+$drkblue03: #2a2e6e;
+
+@mixin push_footer {
+  margin-bottom: 5.5em;
+}
+
+main {
+  ///Taking these from home.scss
+  // margin: 0 auto;
+  // text-align: center;
+  // height: 100%;
+  padding-top: 5em;
+  h1 {
+  font-size: 3em;
+  color: $drkblue01;
+  }
+  table {
+    margin: 5em 2em 2em 3em;
+    position: relative;
+    left: 50vh;
+  }
+
+  .push {
+    @include push_footer;
+  }
+}

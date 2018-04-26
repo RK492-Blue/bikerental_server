@@ -49,7 +49,7 @@
 #                PATCH  /bikes/:id(.:format)           bikes#update
 #                PUT    /bikes/:id(.:format)           bikes#update
 #                DELETE /bikes/:id(.:format)           bikes#destroy
-# 
+#
 
 Rails.application.routes.draw do
 
@@ -67,6 +67,8 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   get '/rentals/:id/pay' => 'rentals#pay', :as => :rental_pay
+
+  #TODO: Add a POST request to /charge for payment to go through! TEST visa card: 4242 4242 4242 4242, any expiry date and any CVC number will do. 
 
 
   get '/rental_user' =>'rentals#rental_user'

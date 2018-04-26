@@ -31,7 +31,5 @@ class Rental < ApplicationRecord
   end
 
 
-  geocoded_by :location
-  after_validation :geocode
 
 end

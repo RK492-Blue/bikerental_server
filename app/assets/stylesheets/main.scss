@@ -8,6 +8,10 @@ $main-drkyellow: #e1b300;
 $main-medyellow: #f5d353;
 $main-blue: #4b85ab;
 $main-drkblue: #2a2e6e;
+$main-orange: #d98200;
+$drkblue01: #293b7d;
+$drkblue02: #424b73;
+$drkblue03: #2a2e6e;
 
 * {
   box-sizing: border-box;
@@ -74,7 +78,6 @@ nav {
 }
 
 
-
 footer { //TODO: doesn't stick to bottom on rentals page.
   background-color: $bg-lightyellow;
   color: $main-drkblue;
@@ -106,16 +109,16 @@ footer { //TODO: doesn't stick to bottom on rentals page.
 
 
 ///////////// MEDIA QUERIES ///////////////////
-
+$logoOuter-width: 520px;
 /// Big Screen
 @media (min-width: 900px){
   #logoOuter {
-    width: 520px;
+    width: $logoOuter-width;
     height: 240px;
     border-radius: 250px / 120px;
     top: -4em;
     left: 50vw; //lines left edge of eclipse
-    margin-left: -260px; //moving it left by half it's width so the left 50vw will work.
+    margin-left: -($logoOuter-width / 2); //moving it left by half it's width so the left 50vw will work.
     #logoInner {
       width: 500px;
   	  height: 220px;

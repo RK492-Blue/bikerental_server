@@ -1,4 +1,4 @@
-
+// Style for Home page
 $bg-lightyellow: #eee66e;
 $main-drkyellow: #e1b300;
 $main-medyellow: #f5d353;
@@ -23,7 +23,11 @@ main {
   margin: 0 auto;
   text-align: center;
   height: 100%;
-  h1 {
+  header {
+    margin-top: -5em;
+  }
+  .welcome {
+    margin-top: -1em;
     font-size: 3em;
     color: $drkblue01;
   }

@@ -1,13 +1,14 @@
+<h1>Your Rental Details</h1>
 <%if @current_user.present? && !@rental.end_stand_id.present? %>
-<p>You have rented bike <%= @rental.bike.bike_serial_num %>.</p><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time %></p>
-
+<h3>You have rented bike <%= @rental.bike.bike_serial_num %></h3><p> Starting from <%= @rental.start_stand.location %> at  <%= @rental.start_time.strftime('%e %b %Y  %l:%M %P') %></p>
+<br>
 <%= link_to 'Return Bike', edit_rental_path(@rental) %> |
 
 <%= link_to 'Back', rentals_path %>
 
 <%else %>
-<p>Thank you for choosing BikeShare App</p>
-<p>Receipt Details</p>
+<h3>Thank you for choosing bShare</h3>
+<p>Receipt Details:</p>
 <p>Bike: <%= @rental.bike.bike_serial_num %>.</p>
 <p>Travel Details:-</p>
 <p><%= @rental.start_stand.location %> to <%= @rental.end_stand.location %></p>
@@ -17,7 +18,7 @@
 <p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>
 <!-- <p>Duration: <%= @rental.duration %> hours</p> -->
 <p>Duration: <%= @rental.duration %> hours</p>
-
+<br>
 <%= link_to 'Back', rentals_path %>
 
 

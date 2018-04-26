@@ -12,6 +12,11 @@ $main-orange: #d98200;
 $drkblue01: #293b7d;
 $drkblue02: #424b73;
 $drkblue03: #2a2e6e;
+$drkblue05: #364fa3;
+$lightblue01: #4666b1;
+$lightblue02: #8fc6ed;
+$lightblue03: #c5e4f9;
+$main-grey: #807d76;
 
 * {
   box-sizing: border-box;
@@ -26,6 +31,9 @@ body {
   font-size: 100%;
   height: 100%;
   overflow-x: hidden;
+  .hidden {
+    display: none; 
+  }
 }
 
 nav {

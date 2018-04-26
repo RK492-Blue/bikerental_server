@@ -8,8 +8,8 @@
   <thead>
     <tr class="row100 head">
       <th class="column100 column1">Location</th>
-      <th class="column100 column2">Bike Stand Longitude</th>
-      <th class="column100 column3">Bike Stand Latitude</th>
+      <th class="column100 column2">Longitude</th>
+      <th class="column100 column3">Latitude</th>
     </tr>
   </thead>
 
@@ -311,10 +311,6 @@ function initMap() {
   ]
 
 
-
-
-
-
   });
   console.log($('#map').data('location') )
   let locationList = $('#map').data('location')
@@ -324,8 +320,9 @@ function initMap() {
      position: {lat: +locationList[i].latitude, lng: +locationList[i].longitude},
      map: map,
      // label: locationList[i].location,
-     title:locationList[i].location,
-     icon:'app/assets/images/download.png'
+     title:locationList[i].location
+     // this icon didnt work
+     // icon:'app/assets/images/download.png'
 
     })
   }

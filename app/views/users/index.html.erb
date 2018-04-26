@@ -8,7 +8,7 @@
       <table>
         <thead>
           <tr class="row100 head">
-            <th class="column100 column1">User ID</th>
+            <!-- <th class="column100 column1">User ID</th> -->
             <th class="column100 column2">Name</th>
             <th class="column100 column3">User type</th>
             <th class="column100 column4">Email</th>
@@ -18,7 +18,7 @@
         <tbody>
           <% @users.each do |user| %>
             <tr class="row100">
-              <td class="column100 column1"><%= user.id %></td>
+              <!-- <td class="column100 column1"><%= user.id %></td> -->
               <td class="column100 column2"><%= link_to "#{user.name}", user %></td>
               <td class="column100 column3"><%= user.user_type %></td>
               <td class="column100 column4"><%= user.email %></td>

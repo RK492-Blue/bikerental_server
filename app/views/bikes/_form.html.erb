@@ -21,7 +21,6 @@
             <%= form.text_field :bike_serial_num, id: :bike_bike_serial_num,:required =>true %>
           </div>
 
-
           <div class="field">
             <%= form.label :bikestand_id %>
             <%= form.select :bikestand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->' }, :required => true%>

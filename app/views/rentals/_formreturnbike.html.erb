@@ -1,4 +1,3 @@
-
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -6,6 +5,7 @@
         <% if rental.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
             <ul>
             <% rental.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -15,37 +15,99 @@
         <% end %>
 
         <div class="field">
-          <%= formreturn.label :end_time%>
-          <%= formreturn.text_field :end_time, id: :rental_end_time %>
-        </div>
-        <div class="field">
           <%= formreturn.label :end_stand_id %>
-          <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), :include_blank => true%>
+          <%= formreturn.select :end_stand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->'},:required =>true%>
         </div>
-        <div class="field">
+
+
+        <!-- <div class="field">
           <%= formreturn.label :cost %>
-          <%=  %>
-
-
           <%= formreturn.text_field :cost, id: :rental_cost %>
+        </div> -->
+
+
+        <div class="field">
+          <%= formreturn.label :end_time%>
+          <%= formreturn.text_field :end_time, id: :rental_end_time,:required =>true %>
         </div>
+
+
+
+
+      <!-- <div class="field">
+          <%= formreturn.label :cost %>
+          <%= formreturn.text_field :cost, id: :rental_cost %>
+        </div> -->
+
         <div class="actions">
           <%= formreturn.submit "Return Bike" %>
         </div>
         <% end %>
 <% end %>
 
+<!--  *********************************************** -->
+<%= content_tag :div, id: "map", data: {location: @bikestands} do %>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA&callback=mapLocation">
+</script>
 
-<p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>
+<script>
 
-<!-- <form action="/charge" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js"
-    class="stripe-button"
-    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-    data-image="/square-image.png"
-    data-name="Demo Site"
-    data-description="2 widgets ($20.00)"
-    data-amount="2000">
-  </script>
-</form> -->
+let bikestand = {lat: -33.87, lng: 151.20}
+
+let map;
+// let ipAddress = '<%=  request.remote_ip %>'
+function mapLocation(locationID) {
+  if (locationID)
+  console.log('maplocation', locationID);
+  let locationList = $('#map').data('location')
+  console.log(locationList);
+
+  // If we have a locationID, make that the new center of the map.
+  let selectedStand;
+  if (locationID) {
+    // TODO: use _.findBy instead of this loop
+    for (let i=0; i < locationList.length; i++) {
+      if (+locationID === locationList[i].id) {
+        selectedStand = locationList[i];
+        break;
+      }
+    }
+    bikestand.lat = +selectedStand.latitude;
+    bikestand.lng = +selectedStand.longitude;
+  }
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: bikestand.lat, lng: bikestand.lng},
+    zoom: 7
+  });
+  console.log($('#map').data('location') )
+  if (selectedStand) {
+    marker = new google.maps.Marker ({
+     position: {lat: +selectedStand.latitude, lng: +selectedStand.longitude},
+     map: map,
+     label: selectedStand.location
+   });
+   console.log(marker)
+  } else {
+    for (var i = 0; i < locationList.length; i++) {
+      console.log( locationList[i] );
+      marker = new google.maps.Marker ({
+       position: {lat: +locationList[i].latitude, lng: +locationList[i].longitude},
+       map: map,
+       label: locationList[i].location
+      })
+    }
+  }
+}
+$('[name="rental[end_stand_id]"]').on('change', function () {
+  const id = $(this).val();
+  mapLocation( id )
+});
+// navigator.geolocation.getCurrentPosition( function(results) {
+//   console.log(results.coords.latitude, results.coords.longitude)
+//   bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
+//   mapLocation()
+// })
+</script>
+
+<% end %>
+<!--  *********************************************** -->

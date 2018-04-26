@@ -27,7 +27,11 @@
           <div class="navInner">
             <div class="barLinks">
               <div class="barLeft">
+                <% if @current_user.user_type === 'admin' %>
+                <%= link_to 'Users', users_path %>
+                <% else %>
                 <%= link_to 'Profile', users_path %>
+                <% end %>
                 <%= link_to 'Bikes',bikes_path %>
                 <%= link_to 'Bike Stands', bikestands_path %>
               </div>

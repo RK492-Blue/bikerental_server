@@ -2,7 +2,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bikes</h1>
+<br>
+<% if @current_user.present? && @current_user.user_type == 'admin' %>
+<div class="button"><%= link_to 'New Bike', new_bike_path %></div>
 
+<% end %>
 <div class="container-table100">
   <div class="wrap-table100">
     <div class="table100">
@@ -48,9 +52,3 @@
 </div>
 </div>
 </div>
-
-<br>
-<% if @current_user.present? && @current_user.user_type == 'admin' %>
-<%= link_to 'New Bike', new_bike_path %>
-
-<% end %>

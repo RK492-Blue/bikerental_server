@@ -18,6 +18,17 @@ $lightblue02: #8fc6ed;
 $lightblue03: #c5e4f9;
 $main-grey: #807d76;
 
+$Abril-Fatface: 'Abril Fatface', cursive;
+$Alice: 'Alice', serif;
+$Berkshire-Swash: 'Berkshire Swash', cursive;
+$Bree-Serif: 'Bree Serif', serif;
+$Contrail-One: 'Contrail One', cursive;
+$Fugaz-One: 'Fugaz One', cursive;
+$Lobster: 'Lobster', cursive;
+$Lobster-Two: 'Lobster Two', cursive;
+$Satisfy: 'Satisfy', cursive;
+$Shrikhand: 'Shrikhand', cursive;
+
 * {
   box-sizing: border-box;
 }
@@ -29,11 +40,20 @@ body {
   border: 0;
   background-color: $bg-lightyellow;
   font-size: 100%;
+  font-family: $Contrail-One;
   height: 100%;
   overflow-x: hidden;
   .hidden {
-    display: none; 
+    display: none;
   }
+  a {
+    color: $main-drkblue;
+    text-decoration: none;
+    &:hover {
+      color: $drkblue02;
+    }
+  }
+
 }
 
 nav {
@@ -45,6 +65,7 @@ nav {
     #logoOuter {
       background-color:$main-drkyellow;
       position: relative;
+      box-shadow: 5px 10px 18px $main-grey;
       z-index: 1;
       #logoInner {
         background-color: $main-medyellow;
@@ -52,9 +73,17 @@ nav {
         z-index: 2;
         a {
           color: $main-blue;
+          font-size: 5em;
+          font-weight: 500;
+          font-family: $Fugaz-One;
           text-decoration: none;
           position: relative;
           text-align: inherit;
+          letter-spacing: 0;
+          transition: all .5s ease-in-out;
+          &:hover {
+            color: $lightblue03;
+          }
         }
       }
     }
@@ -65,7 +94,13 @@ nav {
 
         a {
           color: $main-blue;
+          font-size: 20px;
+          font-weight: 500;
           text-decoration: none;
+          transition: all .5s;
+          &:hover {
+            color: $lightblue03;
+          }
 
         .barLeft {
           display: inline-block;
@@ -106,10 +141,46 @@ footer { //TODO: doesn't stick to bottom on rentals page.
       border-top-right-radius: 20em;
       position: relative;
       top: 5%;
-      p {
-        position: relative;
-        top: 25%;
-        left: 33%;
+
+      .footerLinks {
+        height: inherit;
+        .footerLinksLeft {
+          position: relative;
+          top: 5vh;
+          left: 25vw;
+          a{
+          display: block;
+          padding: 10px 0px;
+          font-size: 15px;
+        }
+      }
+        .footerLinksRight{
+          position: relative;
+          top: -18vh;
+          left: 60vw;
+          a {
+            display: block;
+            padding: 10px 0px;
+            font-size: 15px;
+          }
+        }
+    }
+    .socialMedia {
+      position: relative;
+      top: -11vh;
+      left: 3vw;
+      p, a {
+        padding-left: 10px;
+      }
+    }
+    .copyright {
+      position: relative;
+      display: block;
+      padding-top: 10px;
+      text-align: justify;
+      top: -16vh;
+      left: 77vw;
+      font-size: 12px;
       }
     }
   }
@@ -134,9 +205,8 @@ $logoOuter-width: 520px;
       top: 0em;
       left: .5em;
       a {
-        font-size: 4em;
-        top: 2em;
-        left: 2em;
+        top: 1.5em;
+        left: 1.5em;
       }
     }
   }
@@ -151,7 +221,7 @@ $logoOuter-width: 520px;
       .barLeft {
         position: relative;
         top: 4.5em;
-        left: 2vh;
+        left: 5vw;
         a {
           padding: 1em;
         }
@@ -159,7 +229,7 @@ $logoOuter-width: 520px;
       .barRight {
         position: relative;
         top: 3.5em;
-        left: 130vh;
+        left: 70vw;
         a {
           padding: 1em;
         }
@@ -267,34 +337,3 @@ $logoOuter-width: 520px;
     }
   }
 }
-
-// p, ol, ul, td
-//
-// pre
-//
-// h2, ul, li
-//
-// label
-// #notice
-// .field_with_errors
-// #error_explanation
-//
-//
-// a {
-//   color: #000;
-//
-//   &:visited {
-//     color: #666;
-//   }
-//
-//   &:hover {
-//     color: #fff;
-//     background-color: #000;
-//   }
-// }
-//
-// div {
-//   &.field, &.actions {
-//     margin-bottom: 10px;
-//   }
-// }

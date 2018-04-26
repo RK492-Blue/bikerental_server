@@ -26,6 +26,9 @@ main {
   header {
     margin-top: -5em;
   }
+  .slogan {
+    margin-top: -1em;
+  }
   .welcome {
     margin-top: -1em;
     font-size: 3em;
@@ -37,6 +40,11 @@ main {
     padding: 1em;
     background-color: $main-drkyellow;
     border-radius: 5em;
+    opacity: .7;
+    transition: .2s;
+    &:hover {
+      opacity: 1;
+    }
     a {
       text-decoration: none;
       color: white;

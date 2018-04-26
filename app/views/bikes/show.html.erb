@@ -4,16 +4,16 @@
 <%= image_tag "default_bike.png" %>
 
 <p>
-  <strong>Bike serial num:</strong>
+  <strong>Serial Number:</strong>
   <%= @bike.bike_serial_num %>
 </p>
 
 <p>
-  <strong>Bikestand:</strong>
+  <strong>Bike Stand:</strong>
   <%= @bike.bikestand.location %>
 </p>
 
-<p><strong>Available:</strong></p>
+<p><strong>Available for Hire:</strong></p>
   <% if @bike.available %>
   <p>Yes</p>
   <% else %>

@@ -43,11 +43,12 @@ th, td {
 }
 
 .column100.column1 {
-  width: 265px;
+  //width: 265px;
   padding-left: 42px;
 }
 
 .row100.head th {
+  font-size: 1em;
   padding-top: 24px;
   padding-bottom: 20px;
 }
@@ -62,7 +63,7 @@ th, td {
   border-radius: 16px;
   overflow: hidden;
   background: $lightblue03;
-  background: linear-gradient(-68deg, $lightblue01 , $lightblue02);
+  background: linear-gradient(-68deg, $lightblue02 , $lightblue03);
 }
 
 .table100 table {

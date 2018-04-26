@@ -49,7 +49,7 @@ class Rental < ApplicationRecord
  * bcrypt gem for authentication
  * geocoder gem for geolocation
  * stripe gem for payment
- * raise gem
+
 
 ### JQuery plugin
 

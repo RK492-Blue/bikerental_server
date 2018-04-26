@@ -23,10 +23,12 @@
 
           <div class="field">
             <%= form.label :bikestand_id %>
-            <%= form.number_field :bikestand_id, id: :bike_bikestand_id,:required =>true%>
+            <!-- <%= form.number_field :bikestand_id, id: :bike_bikestand_id,:required =>true%> -->
+            <%= form.select :bikestand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->' }, :required => true%>
+
           </div>
 
-          
+
           <!-- <div class="field">
             <%= form.label :available %>
             <%= form.text_field :available, id: :bike_available %>

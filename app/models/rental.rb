@@ -29,5 +29,7 @@ class Rental < ApplicationRecord
       ((Time.now - start_time) / 3600.0).ceil # Hours
     end
   end
+
+
   
 end

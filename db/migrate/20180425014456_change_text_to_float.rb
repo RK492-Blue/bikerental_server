@@ -1,6 +1,6 @@
 class ChangeTextToFloat < ActiveRecord::Migration[5.1]
   def change
-    change_column :bikestands, :bikestand_long, 'float USING bikestand_long::double precision'
-    change_column :bikestands, :bikestand_lat, 'float USING bikestand_lat::double precision'
+    change_column :bikestands, :bikestand_long, 'float USING CAST(bikestand_long as FLOAT)'
+    change_column :bikestands, :bikestand_lat, 'float USING CAST (bikestand_lat as FLOAT)'
   end
 end

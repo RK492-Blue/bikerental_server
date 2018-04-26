@@ -141,23 +141,46 @@ footer { //TODO: doesn't stick to bottom on rentals page.
       border-top-right-radius: 20em;
       position: relative;
       top: 5%;
-      a {
-        position: relative;
-        display: block;
-        padding: 10px 0px;
 
-        top: 25%;
-        left: 33%;
-        font-size: 15px;
+      .footerLinks {
+        height: inherit;
+        .footerLinksLeft {
+          position: relative;
+          top: 5vh;
+          left: 25vw;
+          a{
+          display: block;
+          padding: 10px 0px;
+          font-size: 15px;
+        }
       }
-      p {
-        position: relative;
-        display: block;
-        padding-top: 10px;
-        text-align: justify;
-        top: 25%;
-        left: 75%;
-        font-size: 12px;
+        .footerLinksRight{
+          position: relative;
+          top: -22vh;
+          left: 60vw;
+          a {
+            display: block;
+            padding: 10px 0px;
+            font-size: 15px;
+          }
+        }
+    }
+    .socialMedia {
+      position: relative;
+      top: -11vh;
+      left: 3vw;
+      p, a {
+        padding-left: 10px;
+      }
+    }
+    .copyright {
+      position: relative;
+      display: block;
+      padding-top: 10px;
+      text-align: justify;
+      top: -16vh;
+      left: 77vw;
+      font-size: 12px;
       }
     }
   }

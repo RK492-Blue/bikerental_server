@@ -99,12 +99,32 @@
         <div class="footOuter">
 
           <div class="footInner">
-              <a href="#">About Us</a>
-              <%= link_to 'FAQ', '/pages/faq'%>
-              <a href="#">Payments</a>
-              <a href="#">Bike Safety</a>
-              <a href="#">Privacy Policy</a>
-              <p>&copy; 2018 Gurdeep, Meena, Ricky, Winnie</p>
+
+            <div class="footerLinks">
+                <div class="footerLinksLeft">
+                  <a href="#">About Us</a>
+                  <%= link_to 'FAQ', '/pages/faq'%>
+                  <a href="#">Payments</a>
+                  <a href="#">Bike Safety</a>
+                  <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footerLinksRight">
+                  <a href="#">Our Mission</a>
+                  <a href="#">Random Shit</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Media</a>
+                  <a href="#">Advertising</a>
+                </div>
+            </div>
+              <div class="socialMedia">
+                <p>Follow us on: </p>
+                <%= link_to image_tag("facebook_icon.svg", :alt => "Facebook") %>
+                <%= link_to image_tag("twitter_icon.svg", :alt => "Twitter") %>
+                <%= link_to image_tag("github_icon.svg", :alt => "Github") %>
+                <%= link_to image_tag("pinterest_icon.svg", :alt => "Pinterest") %>
+              </div>
+
+              <p class="copyright">&copy; 2018 Gurdeep, Meena, Ricky, Winnie</p>
           </div>
         </div>
 

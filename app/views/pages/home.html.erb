@@ -3,6 +3,7 @@
   </header>
   <main>
   <% if @current_user.nil? %>
+  <h1 class="slogan">Ride anytime, anywhere with bShare. At only $2/hour</h1>
     <h4>Please <%= link_to 'sign up', new_user_path %> or <%= link_to 'sign in', login_path %> to hire a bike!</h4>
   <% else @current_user.present? %>
           <% if @current_user.present? && @current_user.user_type === 'admin' %>
@@ -29,7 +30,7 @@
 
     </div>
     <div class="step03">
-      <!-- <p></p> -->
+      <!-- <p>Return bike and pay</p> -->
       <%= image_tag("step03_bg.png", :alt => "Step 2, return bike to closest bike stand when you're done.") %>
 
     </div>

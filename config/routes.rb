@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   get 'session/new'
 
   get 'pages/home'
+  get '/pages/faq' => 'pages#faq'
   #         rental GET    /rentals/:id(.:format)         rentals#show
 
   root :to =>'pages#home'
@@ -73,7 +74,7 @@ Rails.application.routes.draw do
 
   get '/rental_user' =>'rentals#rental_user'
 
-  get '/pages/faq' => 'pages#faq'
+
   resources :rentals
   resources :users
   resources :bikestands

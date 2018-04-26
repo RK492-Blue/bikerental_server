@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'main' %>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Alice|Berkshire+Swash|Bree+Serif|Contrail+One|Fugaz+One|Lobster|Lobster+Two|Satisfy|Shrikhand" rel="stylesheet">
 
   </head>
 
@@ -90,6 +91,7 @@
 
     <main>
       <%= yield %>
+  <div class="push"></div>
     </main>
 
 </div>
@@ -97,9 +99,11 @@
         <div class="footOuter">
 
           <div class="footInner">
-              <p>About Us</p>
-              <%= link_to 'faq', '/pages/faq'%><p></p>
-              <p>Payments</p>
+              <a href="#">About Us</a>
+              <%= link_to 'FAQ', '/pages/faq'%>
+              <a href="#">Payments</a>
+              <a href="#">Bike Safety</a>
+              <a href="#">Privacy Policy</a>
               <p>&copy; 2018 Gurdeep, Meena, Ricky, Winnie</p>
           </div>
         </div>

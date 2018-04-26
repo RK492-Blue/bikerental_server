@@ -1,6 +1,4 @@
 
-
-
 <% if @current_user.nil? %>
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
@@ -61,7 +59,7 @@ let bikestand = {lat: -33.87, lng: 151.20}
 let map;
 // let ipAddress = '<%=  request.remote_ip %>'
 function mapLocation(locationID) {
-  if (locationID) 
+  if (locationID)
   console.log('maplocation', locationID);
   let locationList = $('#map').data('location')
 
@@ -106,11 +104,11 @@ $('[name="rental[start_stand_id]"]').on('change', function () {
   const id = $(this).val();
   mapLocation( id )
 });
-navigator.geolocation.getCurrentPosition( function(results) {
-  console.log(results.coords.latitude, results.coords.longitude)
-  bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
-  mapLocation()
-})
+// navigator.geolocation.getCurrentPosition( function(results) {
+//   console.log(results.coords.latitude, results.coords.longitude)
+//   bikestand = {lat: +results.coords.latitude, lng: +results.coords.longitude}
+//   mapLocation()
+// })
 </script>
 
 <% end %>

@@ -19,7 +19,7 @@
 
         <div class="field">
           <%= form.label :start_stand_id %>
-          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), {:include_blank => '<----- Select Bikestand ----->' }, :required => true%>
+          <%= form.select :start_stand_id, Bikestand.pluck(:location,:id), {:include_blank => '' }, :required => true%>
 
         </div>
 

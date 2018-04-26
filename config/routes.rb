@@ -4,12 +4,19 @@
 #    session_new GET    /session/new(.:format)         session#new
 #     pages_home GET    /pages/home(.:format)          pages#home
 #           root GET    /                              pages#home
-#          users POST   /users(.:format)               users#create
+#          users GET    /users(.:format)               users#index
+#                POST   /users(.:format)               users#create
 #       new_user GET    /users/new(.:format)           users#new
+#      edit_user GET    /users/:id/edit(.:format)      users#edit
+#           user GET    /users/:id(.:format)           users#show
+#                PATCH  /users/:id(.:format)           users#update
+#                PUT    /users/:id(.:format)           users#update
+#                DELETE /users/:id(.:format)           users#destroy
 #          login GET    /login(.:format)               session#new
 #                POST   /login(.:format)               session#create
 #                DELETE /login(.:format)               session#destroy
-#                GET    /                              pages#index
+#     rental_pay GET    /rentals/:id/pay(.:format)     rentals#pay
+#    rental_user GET    /rental_user(.:format)         rentals#rental_user
 #        rentals GET    /rentals(.:format)             rentals#index
 #                POST   /rentals(.:format)             rentals#create
 #     new_rental GET    /rentals/new(.:format)         rentals#new
@@ -21,8 +28,8 @@
 #                GET    /users(.:format)               users#index
 #                POST   /users(.:format)               users#create
 #                GET    /users/new(.:format)           users#new
-#      edit_user GET    /users/:id/edit(.:format)      users#edit
-#           user GET    /users/:id(.:format)           users#show
+#                GET    /users/:id/edit(.:format)      users#edit
+#                GET    /users/:id(.:format)           users#show
 #                PATCH  /users/:id(.:format)           users#update
 #                PUT    /users/:id(.:format)           users#update
 #                DELETE /users/:id(.:format)           users#destroy
@@ -42,7 +49,7 @@
 #                PATCH  /bikes/:id(.:format)           bikes#update
 #                PUT    /bikes/:id(.:format)           bikes#update
 #                DELETE /bikes/:id(.:format)           bikes#destroy
-#
+# 
 
 Rails.application.routes.draw do
 

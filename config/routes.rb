@@ -68,11 +68,12 @@ Rails.application.routes.draw do
 
   get '/rentals/:id/pay' => 'rentals#pay', :as => :rental_pay
 
-  #TODO: Add a POST request to /charge for payment to go through! TEST visa card: 4242 4242 4242 4242, any expiry date and any CVC number will do. 
+  #TODO: Add a POST request to /charge for payment to go through! TEST visa card: 4242 4242 4242 4242, any expiry date and any CVC number will do.
 
 
   get '/rental_user' =>'rentals#rental_user'
 
+  get '/pages/faq' => 'pages#faq'
   resources :rentals
   resources :users
   resources :bikestands

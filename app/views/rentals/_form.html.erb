@@ -2,7 +2,7 @@
 
 
 <% if @current_user.nil? %>
-<<<<<<< HEAD
+
   <h2>Please Sign-in to hire a bike!</h2>
 <% elsif @current_user.present? %>
     <%= form_with model: rental, local: true  do |form| %>
@@ -13,7 +13,7 @@
         <ul>
         <% rental.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-=======
+
     <h2>Please Sign-in to hire a bike!</h2>
     <% elsif @current_user.present? %>
         <%= form_with(model: rental, local: true) do |form| %>

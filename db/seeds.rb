@@ -55,3 +55,5 @@ s6.bikes << b10
 s7.bikes << b13 << b15
 s8.bikes << b6 << b11 << b14
 s9.bikes << b16
+
+Rental.destroy_all

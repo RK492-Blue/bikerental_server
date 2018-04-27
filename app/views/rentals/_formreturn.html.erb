@@ -27,14 +27,20 @@
           <%= formreturn.text_field :start_time, id: :rental_start_time,:required =>true %>
         </div>
 
-        <div class="field">
+
+        <!-- <div class="field">
           <%= formreturn.label :end_time%>
           <%= formreturn.text_field :end_time, id: :rental_end_time,:required =>true %>
-        </div>
+        </div> -->
 
         <div class="field">
           <%= formreturn.label :cost %>
-          <%= formreturn.number_field :cost, id: :rental_cost %>
+          <%#= formreturn.number_field :cost, id: :rental_cost %>
+<!--
+          <%== rental.start_time %>
+          <%= Time.now %>
+-->
+          <%= number_to_currency( ((Time.now - rental.start_time) / 60 / 60) * 2)  %>
         </div>
 
 

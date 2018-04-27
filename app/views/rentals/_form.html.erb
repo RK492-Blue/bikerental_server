@@ -23,7 +23,9 @@
 
 
         <div class="field">
-        <p class = 'bikelabel'>Bikes available on this stand</p>
+        <!-- <p class = 'bikelabel field'>Bikes available on this stand</p> -->
+        <div class = 'bikelabel field'>Bikes available on this stand</div>
+
           <% Bikestand.all.each do |stand| %>
             <%= select_tag "rental[bike_id]",
                 options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),
@@ -35,10 +37,11 @@
         <%= form.hidden_field(:user_id, {:value=>@current_user.id}) %>
         </div>
 
-        <div class="field">
+
+        <!-- <div class="field">
           <%= form.label :start_time %>
           <%= form.text_field :start_time, id: :rental_start_time, :required =>true %>
-        </div>
+        </div> -->
 
         <div class="actions">
           <%= form.submit "Hire a Bike"%>

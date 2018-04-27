@@ -13,6 +13,7 @@
 <p>Travel Details:-</p>
 <p><%= @rental.start_stand.location %> to <%= @rental.end_stand.location %></p>
 <p> Start time:<%= @rental.start_time.strftime '%l:%M:%S %p %A' %></p>
+
 <p> End time:<%= @rental.end_time.strftime '%l:%M:%S %p %A' if @rental.end_time.present? %></p>
 
 <p>Cost:<%= number_to_currency(2 * @rental.duration) %></p>

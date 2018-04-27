@@ -46,14 +46,14 @@ u3 = User.create(:name => 'Ricky', :email => 'ricky@co.au', :password => 'ricky'
 u4 = User.create(:name => 'Gurdeep', :email => 'gurdeep@co.au', :password => 'gurdeep', :user_type => 'user')
 u5 = User.create(:name => 'Meena', :email => 'meena@co.au', :password => 'meena', :user_type => 'user')
 
-# s1.bikes << b1 << b3
-# s2.bikes << b5 << b7
-# s3.bikes << b4 << b2
-# s4.bikes << b8
-# s5.bikes << b9 << b12
-# s6.bikes << b10
-# s7.bikes << b13 << b15
-# s8.bikes << b6 << b11 << b14
-# s9.bikes << b16
+s1.bikes << b1 << b3
+s2.bikes << b5 << b7
+s3.bikes << b4 << b2
+s4.bikes << b8
+s5.bikes << b9 << b12
+s6.bikes << b10
+s7.bikes << b13 << b15
+s8.bikes << b6 << b11 << b14
+s9.bikes << b16
 
 Rental.destroy_all

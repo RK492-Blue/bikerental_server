@@ -23,7 +23,7 @@
   <strong>Bikes:</strong>
   <ul>
     <% @bikestand.bikes.each do |bike| %>
-      <li> <%= link_to bike.bike_serial_num, bike_path %> </li>
+      <li> <%= link_to bike.bike_serial_num, bike %> </li>
     <% end %>
   </ul>
 </p>

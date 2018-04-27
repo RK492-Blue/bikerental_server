@@ -350,10 +350,14 @@ function mapLocation(locationID) {
   });
   console.log($('#map').data('location') )
   if (selectedStand) {
+    let image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
     marker = new google.maps.Marker ({
      position: {lat: +selectedStand.latitude, lng: +selectedStand.longitude},
      map: map,
-     label: selectedStand.location
+     label: selectedStand.location,
+     icon:image
+
    });
    console.log(marker)
   } else {

@@ -57,7 +57,7 @@ class RentalsController < ApplicationController
         Bike.where(:id => @rental.bike_id).update(available: 't',:bikestand_id =>@rental.end_stand_id)
         @rental.update :end_time => Time.now
         @rental.update :cost => ((Time.now - @rental.start_time) / 60 / 60) * 2
-        format.html { redirect_to rental_pay_path(@rental), notice: 'Rental was successfully updated.' }
+        format.html { redirect_to rental_pay_path(@rental), notice: 'Thank you for using bShare!' }
         format.json { render :show, status: :ok, location: @rental }
       else
         format.html { render :edit }

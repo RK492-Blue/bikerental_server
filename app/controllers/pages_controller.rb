@@ -5,4 +5,16 @@ class PagesController < ApplicationController
 
   def faq
   end
+
+  def about
+  end
+
+  def whatbShare
+  end
+
+  def bikesafety
+  end
+
+  def privacypolicy
+  end
 end

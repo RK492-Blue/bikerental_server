@@ -57,6 +57,10 @@ Rails.application.routes.draw do
 
   get 'pages/home'
   get '/pages/faq' => 'pages#faq'
+  get '/pages/about' => 'pages#about'
+  get '/pages/whatbShare' => 'pages#whatbShare'
+  get '/pages/bikesafety' => 'pages#bikesafety'
+  get '/pages/privacypolicy' => 'pages#privacypolicy'
   #         rental GET    /rentals/:id(.:format)         rentals#show
 
   root :to =>'pages#home'

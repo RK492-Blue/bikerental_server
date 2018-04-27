@@ -8,16 +8,32 @@ $main-orange: #d98200;
 $drkblue01: #293b7d;
 $drkblue02: #424b73;
 $drkblue03: #2a2e6e;
+$drkblue05: #364fa3;
+$lightblue01: #4666b1;
+$lightblue02: #8fc6ed;
+$lightblue03: #c5e4f9;
+$main-grey: #807d76;
 
-// #8fc6ed
-// #050f2b
-//
-// #807d76
-//
-// #364fa3
-// #4666b1
-// #c5e4f9
 
+$Abril-Fatface: 'Abril Fatface', cursive;
+$Alice: 'Alice', serif;
+$Berkshire-Swash: 'Berkshire Swash', cursive;
+$Bree-Serif: 'Bree Serif', serif;
+$Contrail-One: 'Contrail One', cursive;
+$Fugaz-One: 'Fugaz One', cursive;
+$Lobster: 'Lobster', cursive;
+$Lobster-Two: 'Lobster Two', cursive;
+$Satisfy: 'Satisfy', cursive;
+$Shrikhand: 'Shrikhand', cursive;
+
+@mixin stepText {
+  font-family: $Abril-Fatface;
+  font-size: 25px;
+  color: $main-blue;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  z-index: 2;
+  position: relative;
+}
 
 main {
   margin: 0 auto;
@@ -57,16 +73,32 @@ main {
       position: relative;
       top: 2em;
       left: -20em;
+      z-index: 1;
+      p {
+        @include stepText;
+        top: 20vh;
+        left: -2vw;
+      }
     }
     .step02 {
     position: relative;
     top: -5em;
     left: 0em;
+    z-index: 1;
+    p {
+      @include stepText;
+      top: 23vh;
+    }
     }
     .step03 {
       position: relative;
       top: -60em;
       left: 20em;
+      z-index: 1;
+      p {
+        @include stepText;
+        top: 16vh;
+      }
     }
 
   }

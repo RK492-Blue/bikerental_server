@@ -50,7 +50,32 @@ main {
     }
   }
 
+  .bikesafety_container {
+    margin: 20px;
+    padding: 1em;
+    .bikesafety_question {
+        margin: 0 auto;
+        font-size: 25px;
+        padding: 20px 20px 5px 0px;
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
 
+
+    }
+    .bikesafety_answer_container {
+        height: 0px;
+        overflow: hidden;
+        padding: 0px;
+        font-family: sans-serif;
+        font-style: italic;
+
+    }
+  }
+
+.display{
+  font-style: italic;
+}
   .push {
     @include push_footer;
   }

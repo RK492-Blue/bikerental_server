@@ -17,4 +17,7 @@ class PagesController < ApplicationController
 
   def privacypolicy
   end
+
+  def ourmission
+  end
 end

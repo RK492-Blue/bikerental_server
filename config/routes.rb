@@ -61,6 +61,7 @@ Rails.application.routes.draw do
   get '/pages/whatbShare' => 'pages#whatbShare'
   get '/pages/bikesafety' => 'pages#bikesafety'
   get '/pages/privacypolicy' => 'pages#privacypolicy'
+  get '/pages/ourmission' => 'pages#ourmission'
   #         rental GET    /rentals/:id(.:format)         rentals#show
 
   root :to =>'pages#home'

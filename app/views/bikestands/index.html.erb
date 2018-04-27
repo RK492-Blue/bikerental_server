@@ -322,14 +322,16 @@ function initMap() {
   let locationList = $('#map').data('location')
   for (var i = 0; i < locationList.length; i++) {
     console.log( locationList[i] )
+    let image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
     marker = new google.maps.Marker ({
      position: {lat: +locationList[i].latitude, lng: +locationList[i].longitude},
      map: map,
      // label: locationList[i].location,
-     title:locationList[i].location
+     title:locationList[i].location,
      // this icon didnt work
      // icon:'app/assets/images/download.png'
-
+     icon:image
     })
   }
 }

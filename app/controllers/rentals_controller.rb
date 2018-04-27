@@ -35,10 +35,11 @@ class RentalsController < ApplicationController
   def create
 
     @rental = Rental.new(rental_params)
-
+    @rental.start_time = Time.now
     respond_to do |format|
       if @rental.save
         Bike.where(:id => @rental.bike_id).update(available: 'f')
+
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
         format.json { render :show, status: :created, location: @rental }
       else
@@ -54,6 +55,7 @@ class RentalsController < ApplicationController
     respond_to do |format|
       if @rental.update(rental_params)
         Bike.where(:id => @rental.bike_id).update(available: 't',:bikestand_id =>@rental.end_stand_id)
+        @rental.update :end_time => Time.now
         format.html { redirect_to rental_pay_path(@rental), notice: 'Rental was successfully updated.' }
         format.json { render :show, status: :ok, location: @rental }
       else
@@ -77,7 +79,7 @@ class RentalsController < ApplicationController
   def pay
     #raise
     @current_rental = Rental.find_by :id => params[:id]
-    
+
 
   end
 

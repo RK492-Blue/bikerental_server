@@ -3,6 +3,10 @@
 
 Check out the [Bike Sharing App](https://bsharegawdi26.herokuapp.com/)
 
+
+![BikeSharing Screenshot](https://github.com/RK492-Blue/bikerental_server/tree/master/app/assets/images/bikeshare)
+<br/>
+
 ## Getting Started
 
 The application has 3 levels of access.

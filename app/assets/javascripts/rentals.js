@@ -1,6 +1,6 @@
 
-// Time difference
-const rate = 1; // per hour
+// // Time difference
+// const rate = 1; // per hour
 
 $(document).ready(function () {
   $('#rental_end_time, #rental_start_time').datetimepicker(

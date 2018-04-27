@@ -23,7 +23,7 @@
 
 
         <div class="field">
-        <p>Bikes available on this stand</p>
+        <p class = 'bikelabel'>Bikes available on this stand</p>
           <% Bikestand.all.each do |stand| %>
             <%= select_tag "rental[bike_id]",
                 options_for_select(stand.bikes.where(:available => true).pluck(:bike_serial_num, :id)),

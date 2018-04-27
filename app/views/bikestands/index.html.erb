@@ -10,14 +10,28 @@
   <div class="wrap-table100">
     <div class="table100">
 <table>
-  <thead>
-    <tr class="row100 head">
-      <th class="column100 column1">Location</th>
-      <th class="column100 column2">Longitude</th>
-      <th class="column100 column3">Latitude</th>
-      <th class="column100 column4" colspan="3">Actions</th>
-    </tr>
-  </thead>
+  <% if @current_user.present? && @current_user.user_type == 'admin' %>
+    <thead>
+      <tr class="row100 head">
+        <th class="column100 column1">Location</th>
+        <th class="column100 column2">Longitude</th>
+        <th class="column100 column3">Latitude</th>
+        <th class="column100 column4" colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <%else%>
+      <thead>
+        <tr class="row100 head">
+          <th class="column100 column1">Location</th>
+          <th class="column100 column2">Longitude</th>
+          <th class="column100 column3">Latitude</th>
+
+        </tr>
+      </thead>
+  <%end%>
+
+
+
 
   <tbody>
     <% @bikestands.each do |bikestand| %>

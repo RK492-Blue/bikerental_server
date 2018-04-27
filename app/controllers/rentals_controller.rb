@@ -40,7 +40,7 @@ class RentalsController < ApplicationController
       if @rental.save
         Bike.where(:id => @rental.bike_id).update(available: 'f')
 
-        format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
+        format.html { redirect_to @rental, notice: 'Yay! You just rented a bike!' }
         format.json { render :show, status: :created, location: @rental }
       else
         format.html { render :new }

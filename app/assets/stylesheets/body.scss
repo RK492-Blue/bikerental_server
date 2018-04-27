@@ -12,10 +12,49 @@ $drkblue01: #293b7d;
 $drkblue02: #424b73;
 $drkblue03: #2a2e6e;
 
+$Abril-Fatface: 'Abril Fatface', cursive;
+$Alice: 'Alice', serif;
+$Berkshire-Swash: 'Berkshire Swash', cursive;
+$Bree-Serif: 'Bree Serif', serif;
+$Contrail-One: 'Contrail One', cursive;
+$Fugaz-One: 'Fugaz One', cursive;
+$Lobster: 'Lobster', cursive;
+$Lobster-Two: 'Lobster Two', cursive;
+$Satisfy: 'Satisfy', cursive;
+$Shrikhand: 'Shrikhand', cursive;
+
 @mixin push_footer {
-  margin-bottom: 5.5em;
+  margin-bottom: 9.5em;
 }
 
+@mixin faq_safety_container {
+  margin: 20px;
+  padding: 1em;
+}
+
+@mixin faq_safety_question {
+  margin: 0 auto;
+  font-size: 25px;
+  padding: 20px 20px 5px 0px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@mixin faq_safety_answer {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px;
+  font-family: sans-serif;
+  font-style: italic;
+  line-height: 28px;
+}
+
+
+
+
+
+/////////////////// SCSS //////////////
 main {
   ///Taking these from home.scss
   // margin: 0 auto;
@@ -28,54 +67,31 @@ main {
   }
 
   .faq_container {
-    margin: 20px;
-    padding: 1em;
+    @include faq_safety_container;
     .faq_question {
-        margin: 0 auto;
-        font-size: 25px;
-        padding: 20px 20px 5px 0px;
-        display: inline-block;
-        cursor: pointer;
-        font-weight: bold;
-
-
+        @include faq_safety_question;
     }
     .faq_answer_container {
-        height: 0px;
-        overflow: hidden;
-        padding: 0px;
-        font-family: sans-serif;
-        font-style: italic;
-
+        @include faq_safety_answer;
     }
   }
 
   .bikesafety_container {
-    margin: 20px;
-    padding: 1em;
+    @include faq_safety_container;
     .bikesafety_question {
-        margin: 0 auto;
-        font-size: 25px;
-        padding: 20px 20px 5px 0px;
-        display: inline-block;
-        cursor: pointer;
-        font-weight: bold;
-
-
+      @include faq_safety_question;
     }
     .bikesafety_answer_container {
-        height: 0px;
-        overflow: hidden;
-        padding: 0px;
-        font-family: sans-serif;
-        font-style: italic;
-
+      @include faq_safety_answer;
     }
   }
 
-.display{
+.otherPages {
+  font-family: sans-serif;
   font-style: italic;
 }
+
+/// Push Footer Down ///
   .push {
     @include push_footer;
   }
